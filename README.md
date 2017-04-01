@@ -1,0 +1,2 @@
+# wAkademiQ
+dobrze poszło
