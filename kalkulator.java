@@ -6,6 +6,9 @@ package javaKalkulator;
  */
 public class MatKalkulator extends javax.swing.JFrame {
 
+    private double wynik1 = 0.0;
+    private double wynik2 = 0.0;
+    private char znak;
     /**
      * Creates new form MatKalkulator
      */
