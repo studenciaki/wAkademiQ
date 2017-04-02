@@ -11,10 +11,5 @@
     <input type="submit" name="submit" value="WERYFIKUJ"/>
 </form>
 </form>
-<br><br><br>--------------------------------------------<br>
-108601 - Darek<br>
-108614 - Karol<br>
-108617 - Tomek
-<br>--------------------------------------------
 </body>
 </html>
