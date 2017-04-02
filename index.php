@@ -1,0 +1,20 @@
+﻿<html>
+<head>
+<title>System Uwierzytelniania Mieszkańca</title>
+</head>
+<body>
+<center>
+<h1><sub>w</sub>AkademiQ</h1>
+<h3>System Uwierzytelniania Mieszkańca</h3>
+<form action="weryfikacja.php" method="post">
+    Nr albumu:  <input type="text" name="nr_albumu"/>
+    <input type="submit" name="submit" value="WERYFIKUJ"/>
+</form>
+</form>
+<br><br><br>--------------------------------------------<br>
+108601 - Darek<br>
+108614 - Karol<br>
+108617 - Tomek
+<br>--------------------------------------------
+</body>
+</html>
