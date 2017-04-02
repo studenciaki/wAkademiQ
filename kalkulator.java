@@ -411,5 +411,11 @@ public class MatKalkulator extends javax.swing.JFrame {
             }
         });
 
-       
+       btnDwaIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDwaIP.setText("2");
+        btnDwaIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDwaIPActionPerformed(evt);
+            }
+        });
     }
