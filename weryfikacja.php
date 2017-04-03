@@ -62,6 +62,8 @@
     }
 }
    }
+   else
+	   echo "Brak numeru indeksu w bazie!";
 mysql_close($polaczenie);
 ?>
 </body>
