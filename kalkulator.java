@@ -418,4 +418,12 @@ public class MatKalkulator extends javax.swing.JFrame {
                 btnDwaIPActionPerformed(evt);
             }
         });
+        
+         btnTrzyIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnTrzyIP.setText("3");
+        btnTrzyIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrzyIPActionPerformed(evt);
+            }
+        });
     }
