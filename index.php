@@ -1,4 +1,7 @@
-﻿<html>
+<?php
+session_start();
+?>
+<html>
 <head>
 <title>System Uwierzytelniania Mieszkańca</title>
 </head>
@@ -10,6 +13,14 @@
     Nr albumu:  <input type="text" name="nr_albumu"/>
     <input type="submit" name="submit" value="WERYFIKUJ"/>
 </form>
-</form>
+<?php
+if(isset($_SESSION['nr_albumu']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Mieszkaniec poinformowany!");';
+    echo '</script>';
+}
+unset($_SESSION['nr_albumu']);
+?>
 </body>
 </html>
