@@ -1,4 +1,7 @@
-﻿<html>
+<?php
+session_start();
+?>
+<html>
 <head>
 <title>System Uwierzytelniania Mieszkańca</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -29,12 +32,7 @@
 			echo $d['wiadomosci_administracja'];
 			echo "<form action=\"powiadomiono.php\ method=\"post\">";
 			echo "<input type=\"submit\" name=\"submit\" value=\"POWIADOM\"/></form>";
-			$plik="ostatni.txt";
-			$plik_a = fopen($plik, "w+");
-			flock($plik_a, 2);
-			fwrite($plik_a, $nr_albumu);
-			flock($plik_a, 3);
-			fclose($plik_a);
+			$_SESSION['nr_albumu']=$d['nr_albumu'];
 		}
 		echo ("<br><br></b><div id='ramka'><img src=\"zdjecia/$nr_albumu.png\"></div>");
 		$lokator=$d['lokator'];
