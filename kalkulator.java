@@ -418,4 +418,20 @@ public class MatKalkulator extends javax.swing.JFrame {
                 btnDwaIPActionPerformed(evt);
             }
         });
+        
+        btnTrzy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnTrzy.setText("3");
+        btnTrzy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTrzyActionPerformed(evt);
+            }
+        });
+
+        btnCztery.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCztery.setText("4");
+        btnCztery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCzteryActionPerformed(evt);
+            }
+        });
     }
