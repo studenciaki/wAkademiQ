@@ -52,8 +52,6 @@ session_start();
 		{
 			echo "</b><br><body bgcolor='red'>Wiadomość od administracji: <b>";
 			echo $e['wiadomosci_administracja'];
-			echo "<form action=\"powiadomiono.php?nr_albumu='.$nr_albumu.'\" method=\"post\">";
-			echo "<input type=\"submit\" name=\"submit\" value=\"POWIADOM\"/></form>";
 		}
 		echo ("<br><br></b><div id='ramka'><img src=\"zdjecia/$lokator.png\"></div>");
 	}
