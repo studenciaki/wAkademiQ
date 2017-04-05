@@ -434,4 +434,53 @@ public class MatKalkulator extends javax.swing.JFrame {
                 btnCzteryActionPerformed(evt);
             }
         });
+        
+         btnPiec.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPiec.setText("5");
+        btnPiec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiecActionPerformed(evt);
+            }
+        });
+
+        btnSzesc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSzesc.setText("6");
+        btnSzesc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSzescActionPerformed(evt);
+            }
+        });
+
+        btnDziewiec.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDziewiec.setText("9");
+        btnDziewiec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDziewiecActionPerformed(evt);
+            }
+        });
+
+        btnOsiem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnOsiem.setText("8");
+        btnOsiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOsiemActionPerformed(evt);
+            }
+        });
+
+        btnSiedem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSiedem.setText("7");
+        btnSiedem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiedemActionPerformed(evt);
+            }
+        });
+
+        btnZero.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnZero.setText("0");
+        btnZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZeroActionPerformed(evt);
+            }
+        });
     }
+    
