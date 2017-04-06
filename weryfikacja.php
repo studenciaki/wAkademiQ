@@ -11,6 +11,12 @@ session_start();
 <a href='index.php'>Powrót</a><br>
 <?php
    $nr_albumu=$_POST['nr_albumu'];
+   if($nr_albumu=='')
+   {
+	   $_SESSION['blad']=true;
+	   header('Location: \wakademiq/sum/index.php');
+	   exit();
+   }
    $polaczenie=@mysql_connect('localhost','root','');
    $baza = @mysql_select_db('wakademiq', $polaczenie);
    $wynik = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$nr_albumu;") or die('Błąd zapytania');
