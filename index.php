@@ -32,6 +32,11 @@ if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
 }
 unset($_SESSION['nr_albumu']);
 unset($_SESSION['powiadomiony']);
+if(isset($_SESSION['blad']))
+{
+	echo("</font><br><br><font color='red'>Błąd odczytu numeru albumu!");
+}
+unset($_SESSION['blad']);
 ?>
 </body>
 </html>
