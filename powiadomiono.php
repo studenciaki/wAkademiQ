@@ -1,5 +1,10 @@
 <?php
 session_start();
+if(!isset($_SESSION['nr_albumu']))
+{
+	header('Location: \wakademiq/sum/index.php');
+	exit();
+}
 $nr_albumu=$_SESSION['nr_albumu'];
 $polaczenie=@mysql_connect('localhost','root','');
 $baza = @mysql_select_db('wakademiq', $polaczenie);
