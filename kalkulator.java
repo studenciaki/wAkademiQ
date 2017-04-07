@@ -482,5 +482,51 @@ public class MatKalkulator extends javax.swing.JFrame {
                 btnZeroActionPerformed(evt);
             }
         });
+        
+        btnPlus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPlus.setText("+");
+        btnPlus.setPreferredSize(new java.awt.Dimension(43, 31));
+        btnPlus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlusActionPerformed(evt);
+            }
+        });
+
+        btnZero1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnZero1.setText("-");
+        btnZero1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZero1ActionPerformed(evt);
+            }
+        });
+
+        btnZero2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnZero2.setText("*");
+        btnZero2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZero2ActionPerformed(evt);
+            }
+        });
+
+        btnZero3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnZero3.setText("/");
+        btnZero3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZero3ActionPerformed(evt);
+            }
+        });
+
+        btnZero4.setFont(new java.awt.Font("Symbol", 1, 14)); // NOI18N
+        btnZero4.setText("");
+        btnZero4.setMaximumSize(new java.awt.Dimension(43, 31));
+        btnZero4.setMinimumSize(new java.awt.Dimension(43, 31));
+        btnZero4.setPreferredSize(new java.awt.Dimension(43, 31));
+        btnZero4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZero4ActionPerformed(evt);
+            }
+        });
+
     }
+    
     
