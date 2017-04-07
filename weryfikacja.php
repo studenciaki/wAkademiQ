@@ -17,9 +17,10 @@ session_start();
 	   header('Location: \wakademiq/sum/index.php');
 	   exit();
    }
+   $nr_albumu=htmlentities($nr_albumu, ENT_QUOTES, "UTF-8"); //zabezpieczenie przed wstrzykiwaniem SQL
    $polaczenie=@mysql_connect('localhost','root','');
    $baza = @mysql_select_db('wakademiq', $polaczenie);
-   $wynik = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$nr_albumu;") or die('Błąd zapytania');
+   $wynik = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$nr_albumu;") or die(header('Location: \wakademiq/sum/index.php') && $_SESSION['blad_zapytania']=true);
    
    if(mysql_num_rows($wynik) > 0) {
 	   echo ("Mieszkaniec: <br>");
