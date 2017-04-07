@@ -30,8 +30,15 @@ if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
     echo 'alert("Mieszkaniec poinformowany!");';
     echo '</script>';
 }
+if(isset($_SESSION['blad_zapytania']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Błąd zapytania!");';
+    echo '</script>';
+}
 unset($_SESSION['nr_albumu']);
 unset($_SESSION['powiadomiony']);
+unset($_SESSION['blad_zapytania']);
 if(isset($_SESSION['blad']))
 {
 	echo("</font><br><br><font color='red'>Błąd odczytu numeru albumu!");
