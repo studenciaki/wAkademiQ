@@ -509,5 +509,95 @@ public class MatKalkulator extends javax.swing.JFrame {
       
 
     }
+
+/**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MatKalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MatKalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MatKalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MatKalkulator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MatKalkulator().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JButton btnBin;
+    private javax.swing.JButton btnCztery;
+    private javax.swing.JButton btnCzteryIP;
+    private javax.swing.JButton btnDwa;
+    private javax.swing.JButton btnDwaIP;
+    private javax.swing.JButton btnDziewiec;
+    private javax.swing.JButton btnDziewiecIP;
+    private javax.swing.JButton btnHex;
+    private javax.swing.JButton btnJeden;
+    private javax.swing.JButton btnJedenIP;
+    private javax.swing.JButton btnKasujIP;
+    private javax.swing.JButton btnOct;
+    private javax.swing.JButton btnOsiem;
+    private javax.swing.JButton btnOsiemIP;
+    private javax.swing.JButton btnPiec;
+    private javax.swing.JButton btnPiecIP;
+    private javax.swing.JButton btnPierwiastek;
+    private javax.swing.JButton btnPlus;
+    private javax.swing.JButton btnSiedem;
+    private javax.swing.JButton btnSiedemIP;
+    private javax.swing.JButton btnSzesc;
+    private javax.swing.JButton btnSzescIP;
+    private javax.swing.JButton btnTrzy;
+    private javax.swing.JButton btnTrzyIP;
+    private javax.swing.JButton btnWyznaczIP;
+    private javax.swing.JButton btnZero;
+    private javax.swing.JButton btnZero1;
+    private javax.swing.JButton btnZero2;
+    private javax.swing.JButton btnZero3;
+    private javax.swing.JButton btnZero4;
+    private javax.swing.JButton btnZeroIP;
+    private javax.swing.JPanel jIPPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JPanel jPanelNaukowy;
+    private javax.swing.JPanel jPanelStandardowy;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField txtWynik;
+    // End of variables declaration                   
+}
+
     
     
