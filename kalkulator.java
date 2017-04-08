@@ -419,113 +419,94 @@ public class MatKalkulator extends javax.swing.JFrame {
             }
         });
         
-        btnTrzy.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnTrzy.setText("3");
-        btnTrzy.addActionListener(new java.awt.event.ActionListener() {
+       btnTrzyIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnTrzyIP.setText("3");
+        btnTrzyIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTrzyActionPerformed(evt);
+                btnTrzyIPActionPerformed(evt);
             }
         });
 
-        btnCztery.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCztery.setText("4");
-        btnCztery.addActionListener(new java.awt.event.ActionListener() {
+        btnCzteryIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCzteryIP.setText("4");
+        btnCzteryIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCzteryActionPerformed(evt);
+                btnCzteryIPActionPerformed(evt);
             }
         });
+
+        btnPiecIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPiecIP.setText("5");
+        btnPiecIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPiecIPActionPerformed(evt);
+            }
+        });
+
+        btnSzescIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSzescIP.setText("6");
+        btnSzescIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSzescIPActionPerformed(evt);
+            }
+        });
+
+        btnSiedemIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSiedemIP.setText("7");
+        btnSiedemIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiedemIPActionPerformed(evt);
+            }
+        });
+
+        btnOsiemIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnOsiemIP.setText("8");
+        btnOsiemIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOsiemIPActionPerformed(evt);
+            }
+        });
+
+        btnDziewiecIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDziewiecIP.setText("9");
+        btnDziewiecIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDziewiecIPActionPerformed(evt);
+            }
+        });
+
+        btnZeroIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnZeroIP.setText("0");
+        btnZeroIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZeroIPActionPerformed(evt);
+            }
+        });
+
+        btnWyznaczIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnWyznaczIP.setText("=");
+        btnWyznaczIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWyznaczIPActionPerformed(evt);
+            }
+        });
+
+        btnKasujIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnKasujIP.setText("C");
+        btnKasujIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKasujIPActionPerformed(evt);
+            }
+        });
+
         
-         btnPiec.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnPiec.setText("5");
-        btnPiec.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPiecActionPerformed(evt);
-            }
         });
 
-        btnSzesc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSzesc.setText("6");
-        btnSzesc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSzescActionPerformed(evt);
-            }
-        });
-
-        btnDziewiec.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDziewiec.setText("9");
-        btnDziewiec.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDziewiecActionPerformed(evt);
-            }
-        });
-
-        btnOsiem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnOsiem.setText("8");
-        btnOsiem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOsiemActionPerformed(evt);
-            }
-        });
-
-        btnSiedem.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSiedem.setText("7");
-        btnSiedem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiedemActionPerformed(evt);
-            }
-        });
-
-        btnZero.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero.setText("0");
-        btnZero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZeroActionPerformed(evt);
-            }
-        });
+      
+      
         
-        btnPlus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnPlus.setText("+");
-        btnPlus.setPreferredSize(new java.awt.Dimension(43, 31));
-        btnPlus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPlusActionPerformed(evt);
-            }
-        });
-
-        btnZero1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero1.setText("-");
-        btnZero1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero1ActionPerformed(evt);
-            }
-        });
-
-        btnZero2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero2.setText("*");
-        btnZero2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero2ActionPerformed(evt);
-            }
-        });
-
-        btnZero3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero3.setText("/");
-        btnZero3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero3ActionPerformed(evt);
-            }
-        });
-
-        btnZero4.setFont(new java.awt.Font("Symbol", 1, 14)); // NOI18N
-        btnZero4.setText("");
-        btnZero4.setMaximumSize(new java.awt.Dimension(43, 31));
-        btnZero4.setMinimumSize(new java.awt.Dimension(43, 31));
-        btnZero4.setPreferredSize(new java.awt.Dimension(43, 31));
-        btnZero4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero4ActionPerformed(evt);
-            }
-        });
+     
+      
 
     }
     
