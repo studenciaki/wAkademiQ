@@ -500,7 +500,7 @@ public class MatKalkulator extends javax.swing.JFrame {
         });
 
         
-        });
+        
 
       
       
