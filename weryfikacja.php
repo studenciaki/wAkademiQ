@@ -66,7 +66,10 @@ session_start();
 }
    }
    else
-	   echo "Brak numeru indeksu w bazie!";
+   {
+	   header('Location: \wakademiq/sum/index.php');
+	   $_SESSION['brak_w_bazie']=true;
+   }
 mysql_close($polaczenie);
 ?>
 </body>
