@@ -23,6 +23,12 @@ if(min<10)
 document.write(godz + ':' + min);
 </script>
 </font>
+<br><br>
+<form action="wyszukaj.php" method="post">
+Imię:  <input type="text" name="imie"/><br>
+Nazwisko:  <input type="text" name="nazwisko"/><br>
+<input type="submit" name="submit" value="WYSZUKAJ"/>
+</form>
 <?php
 if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
 {
