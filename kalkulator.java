@@ -674,7 +674,16 @@ public class MatKalkulator extends javax.swing.JFrame {
        txtWynik.setText(btnTrzyTekst);
     }                                      
 
-      
+       private void btnPiecActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       String btnPiecTekst = txtWynik.getText() + btnPiec.getText();
+       txtWynik.setText(btnPiecTekst);
+    }                                       
+
+    private void btnCzteryActionPerformed(java.awt.event.ActionEvent evt) {                                          
+       String btnCzteryTekst = txtWynik.getText() + btnCztery.getText();
+       txtWynik.setText(btnCzteryTekst);
+    }                                         
+
       
         
      
