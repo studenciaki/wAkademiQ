@@ -3,7 +3,30 @@ body
 background-color: #404040;
 color: white;
 background-image: url(tlo.jpg);
+font-family: 'Lato', sans-serif;
 
 }
 
+#panel_glowny
+{
+width: 1200px;
+height: 90%;
+background-color: silver;
+}
 
+#panel_mieszkanca
+{
+width: 540px;
+height: 100%;
+background-color: gray;
+float: left;
+}
+#zdjecie
+{
+width: 300px;
+height: 300px;	
+}
+#imie_nazwisko
+{
+font-size: 20px;	
+}
