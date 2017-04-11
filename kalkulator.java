@@ -683,17 +683,156 @@ public class MatKalkulator extends javax.swing.JFrame {
        String btnCzteryTekst = txtWynik.getText() + btnCztery.getText();
        txtWynik.setText(btnCzteryTekst);
     }                                         
-
+ private void btnSzescActionPerformed(java.awt.event.ActionEvent evt) {                                         
+      String btnSzescTekst = txtWynik.getText() + btnSzesc.getText();
+       txtWynik.setText(btnSzescTekst);
       
-        
-     
-      
+    }                                        
 
-    }
+    private void btnSiedemActionPerformed(java.awt.event.ActionEvent evt) {                                          
+      String btnSiedemTekst = txtWynik.getText() + btnSiedem.getText();
+       txtWynik.setText(btnSiedemTekst);
+    }                                         
 
-/**
+    private void btnOsiemActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String btnOsiemTekst = txtWynik.getText() + btnOsiem.getText();
+       txtWynik.setText(btnOsiemTekst);
+    }                                        
+
+    private void btnDziewiecActionPerformed(java.awt.event.ActionEvent evt) {                                            
+      String btnDziewiecTekst = txtWynik.getText() + btnDziewiec.getText();
+       txtWynik.setText(btnDziewiecTekst); 
+    }                                           
+
+    private void btnBinActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void btnOctActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void btnHexActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        // TODO add your handling code here:
+    }                                      
+
+    private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       String btnZeroTekst = txtWynik.getText() + btnZero.getText();
+       txtWynik.setText(btnZeroTekst);
+    }                                       
+
+    private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {                                        
+       wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
+       txtWynik.setText("");
+       znak = '+';
+    }                                       
+
+    private void btnZero1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnZero2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnZero3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnZero4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnPierwiastekActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+    }                                              
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        this.setResizable(true);
+        this.setSize(240, 360);
+    }                                    
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        this.setResizable(false);
+        this.setSize(240, 360);
+    }                                      
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(500, 360);
+        jPanelStandardowy.setVisible(true);
+        jPanelNaukowy.setVisible(true);
+        jIPPanel.setVisible(false);
+    }                                          
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(240, 360);
+        jPanelStandardowy.setVisible(true);
+        jPanelNaukowy.setVisible(false);
+        jIPPanel.setVisible(false);
+    }                                          
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(620, 400);
+        jPanelStandardowy.setVisible(false);
+        jPanelNaukowy.setVisible(false);
+        jIPPanel.setVisible(true);
+    }                                          
+
+    private void btnJedenIPActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void btnDwaIPActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+    }                                        
+
+    private void btnTrzyIPActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void btnCzteryIPActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void btnPiecIPActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void btnSzescIPActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void btnSiedemIPActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void btnOsiemIPActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void btnDziewiecIPActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void btnZeroIPActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+    }                                         
+
+    private void btnWyznaczIPActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void btnKasujIPActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    /**
      * @param args the command line arguments
      */
+      
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
