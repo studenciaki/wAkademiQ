@@ -24,6 +24,7 @@ document.write(godz + ':' + min);
 </script>
 </font>
 <br><br>
+Wyszukaj mieszkańca:<br>
 <form action="wyszukaj.php" method="post">
 Imię:  <input type="text" name="imie"/><br>
 Nazwisko:  <input type="text" name="nazwisko"/><br>
@@ -47,14 +48,14 @@ if(isset($_SESSION['blad_zapytania']))
 }
 if(isset($_SESSION['blad']))
 {
-	echo("</font><br><br><font color='red'>Błąd odczytu numeru albumu!");
+	echo("</font><br><br><font color='red'>Błąd odczytu danych!");
 	unset($_SESSION['blad']);
 }
 if(isset($_SESSION['brak_w_bazie']))
 {
-	echo '<script type="text/javascript">';
-    echo 'alert("Brak numeru albumu w bazie!");';
-    echo '</script>';
+	echo("</font><br><br><font color='red'>");
+	echo $_SESSION['brak_w_bazie'];
+	echo("</font>");
 	unset($_SESSION['brak_w_bazie']);
 }
 ?>
