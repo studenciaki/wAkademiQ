@@ -4,6 +4,7 @@ background-color: #404040;
 color: white;
 background-image: url(tlo.jpg);
 font-family: 'Lato', sans-serif;
+text-shadow: 5px 5px 10px black;
 
 }
 
@@ -12,6 +13,7 @@ font-family: 'Lato', sans-serif;
 width: 1200px;
 height: 90%;
 background-color: silver;
+box-shadow: 5px 5px 10px black;
 }
 
 #panel_mieszkanca
@@ -23,12 +25,15 @@ float: left;
 }
 #zdjecie
 {
-width: 300px;
+width: 250px;
 height: 300px;	
+box-shadow: 5px 5px 10px black;
+margin-top: 8%;
 }
 #imie_nazwisko
 {
-font-size: 20px;	
+font-size: 40px;	
+margin-top: 8%;
 }
 #numer_pokoju
 {
@@ -36,3 +41,4 @@ font-size: 30px;
 width: 100%;
 height: 100px;	
 float: left;
+margin-top: 20px;
