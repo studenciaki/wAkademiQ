@@ -53,7 +53,7 @@ session_start();
    else
    {
 	   header('Location: \wakademiq/sum/index.php');
-	   $_SESSION['brak_w_bazie']=true;
+	   $_SESSION['brak_w_bazie']='Brak wskazanej osoby w bazie danych!';
    }
 mysql_close($polaczenie);
 ?>
