@@ -32,7 +32,8 @@ session_start();
 		echo $d['nazwisko'];
 		echo ("</div></div><div id=\"pasek\"></div>");
 		$lokator=$d['lokator'];
-		$wynik2 = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$lokator;") or die('');
+		if($lokator!=''){
+		$wynik2 = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$lokator;") or die('Błąd zapytania!');
 		if(mysql_num_rows($wynik2) > 0) {
 	   echo ("<div id=\"panel_mieszkanca\">");
     while($e = mysql_fetch_assoc($wynik2)) {
@@ -44,6 +45,7 @@ session_start();
 		echo ("</div></div>");
 	}
     }
+	}
 	echo ("<div id=\"numer_pokoju\">");
 		echo $d['nr_pokoju'];
 		echo("</div></div>");
