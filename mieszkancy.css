@@ -18,9 +18,16 @@ box-shadow: 5px 5px 10px black;
 
 #panel_mieszkanca
 {
-width: 50%;
+width: 48%;
 height: 100%;
 background-color: gray;
+float: left;
+}
+#pasek
+{
+width: 4%;
+height: 100%;
+background-color: green;
 float: left;
 }
 #zdjecie
