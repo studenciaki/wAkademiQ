@@ -5,8 +5,16 @@ font-size: 20px;
 font-weight: bold;
 overflow-y:hidden;	
 background-image: url(admin.jpg);
-}
+font-family: 'Lato', sans-serif;
+text-shadow: 5px 5px 10px black;	
 
+}
+#logo
+{
+	margin-top: 30px;
+	font-size: 60px;
+	color: #ffffff;
+}
  a
 {
 	color: white;
@@ -14,8 +22,8 @@ background-image: url(admin.jpg);
 }
 #panel
 {
-	width: 1000px;
-	margin: auto;
+	margin-top: 50px;
+ margin-left: 120px;
 }
 #panele
 {
@@ -24,38 +32,40 @@ background-image: url(admin.jpg);
 
 #przycisk
 {
-	height: 250px;
-	width: 400px;
+	height: 450px;
+	width: 250px;
 	background-color: orange;
 	margin: 10px;
 	float: left;
-	border-top-left-radius: 60px;
+	box-shadow: 5px 5px 10px black;
+
+
 }
 #przycisk2
 {
-	height: 250px;
-	width: 400px;
-	background-color: yellow;
+	height: 450px;
+	width: 250px;
+	background-color: orange;
 	margin: 10px;
 	float: left;
-	border-top-right-radius: 60px;
-	
+	box-shadow: 5px 5px 10px black;
+
 }
 #przycisk3
 {
-	height: 250px;
-	width: 400px;
-	background-color: blue;
+	height: 450px;
+	width: 250px;
+	background-color: orange;
 	margin: 10px;
 	float: left;
-	border-bottom-left-radius: 60px;
+	box-shadow: 5px 5px 10px black;
 }
 #przycisk4
 {
-	height: 250px;
-	width: 400px;
-	background-color: green;
+	height: 450px;
+	width: 250px;
+	background-color: orange;
 	margin: 10px;
 	float: left;
-	border-bottom-right-radius: 60px;
+	box-shadow: 5px 5px 10px black;
 }
