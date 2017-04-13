@@ -1,0 +1,60 @@
+body
+{
+	color: white;
+	text-shadow: 5px 5px 10px black;	
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	overflow-y:hidden;
+	
+}
+ a
+{
+	color: white;
+	text-decoration: none
+}
+
+#witaj
+{
+	height: 10%;
+	margin-top: 25%;
+	font-size: 250%;
+}
+/* .tlo_przycisk
+{
+	opacity: 0.2;
+	background-color: #000000;
+} */
+.przycisk
+{
+	margin-top: 8%;
+	background-color: #228B22;
+	height: 70px;
+	width: 400px;
+	box-shadow: 5px 5px 10px black;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 45px;
+
+	
+
+}
+.przycisk:hover
+{
+	background-color: #800000;
+}
+.video
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+//	min-height: 100%;
+	min-width: 100%;
+	z-index:-1;
+}
