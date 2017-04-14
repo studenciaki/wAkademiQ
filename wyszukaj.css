@@ -1,0 +1,39 @@
+#gora
+{
+	height: 50%;
+	width: 100%;
+	background-color: orange;
+}
+
+#dol
+{
+	height: 50%;
+	width: 100%;
+	background-color: green;
+}
+
+#blok
+{
+	height: 250px;
+	width: 250px;
+	background-color: green;
+	float: left;
+	margin: 30px;
+}
+
+#bloki
+{
+	height: 300px;
+	width: 1000px;
+	background-color: yellow;
+	float: left;
+}
+
+#wyszukaj
+{
+	height: 150px;
+	width: 700px;
+	background-color: red;
+	float: left;
+	margin: 30px;
+}
