@@ -919,5 +919,3 @@ public class MatKalkulator extends javax.swing.JFrame {
     // End of variables declaration                   
 }
 
-    
-    
