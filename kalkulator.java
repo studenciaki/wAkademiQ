@@ -918,3 +918,4 @@ public class MatKalkulator extends javax.swing.JFrame {
     private javax.swing.JTextField txtWynik;
     // End of variables declaration                   
 }
+
