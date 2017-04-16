@@ -8,7 +8,14 @@ public class MatKalkulator extends javax.swing.JFrame {
 
     private double wynik1 = 0.0;
     private double wynik2 = 0.0;
+   private double minus = 0.0;
     private char znak;
+    private final String Blad = "błąd danych";
+    private final String Z = "0";
+    private final char Kropka = '.';
+    private int pom;
+    private String T;
+    private String pole1="";
     /**
      * Creates new form MatKalkulator
      */
