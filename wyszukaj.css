@@ -7,18 +7,18 @@ body
 {
 	 text-align: center;
 	 color: #ffffff;
-	 font-size: 20px;
+	 font-size: 18px;
 	 font-weight: bold;
 	 font-family: 'Lato', sans-serif;
 	 text-shadow: 5px 5px 10px black;	
 }
 #gora
 {
-	height: 350px;
+	height: 360px;
 	width: 100%;
-/*	background-color: orange; */
-float: left;
- border-bottom-style: dotted;
+	float: left;
+	border-bottom-style: dotted;
+	margin-top: 12px; 
 }
 
 #dol
@@ -42,7 +42,6 @@ float: left;
 {
 	height: 300px;
 	width: 1000px;
-/*	background-color: yellow; */
 	float: left;
 	margin-left: 10%;
 	
@@ -57,20 +56,14 @@ float: left;
 	margin: 30px; 
 	margin-left: 16%;
 	box-shadow: 5px 5px 10px black;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-radius: 10px;
 }
 #lupa
 {
 	height: 70px;
 	width: 70px;
 	background-color: #7c7286;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-radius: 10px;
 	margin-top: 12px;
 	margin-left: 20px;
 	float: left;
@@ -82,20 +75,14 @@ float: left;
 
 input
 {
-height: 60px;
-width: 450px;
-border-top-left-radius: 5px;
-border-top-right-radius: 5px;
-border-bottom-right-radius: 5px;
-border-bottom-left-radius: 5px;
-margin-top: 20px;
-margin-left: 60px;
+	height: 60px;
+	width: 450px;
+	border-radius: 5px;
+	margin-top: 20px;
+	margin-left: 60px;
 }
 #lo
 {
-	/*background-color: black;
-	opacity: 0.8;
-	*/
 	height: 2000px;
 	width: 80%;
 	margin: auto;
