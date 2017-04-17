@@ -4,6 +4,7 @@ session_start();
 <html>
 <head>
 <title>System Uwierzytelniania Mieszkańca</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
 <center>
@@ -14,14 +15,6 @@ Nr albumu:  <input type="text" name="nr_albumu"/>
 <input type="submit" name="submit" value="WERYFIKUJ"/>
 </form>
 <font size="5" face="Consolas">
-<script type="text/javascript">
-var data = new Date();
-var godz = data.getHours();
-var min = data.getMinutes();
-if(min<10)
-	min='0'+min;
-document.write(godz + ':' + min);
-</script>
 </font>
 <br><br>
 Wyszukaj mieszkańca:<br>
@@ -30,6 +23,14 @@ Imię:  <input type="text" name="imie"/><br>
 Nazwisko:  <input type="text" name="nazwisko"/><br>
 <input type="submit" name="submit" value="WYSZUKAJ"/>
 </form>
+<script type="text/javascript">
+var data = new Date();
+var godz = data.getHours();
+var min = data.getMinutes();
+if(min<10)
+	min='0'+min;
+document.write(godz + ':' + min);
+</script>
 <?php
 if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
 {
