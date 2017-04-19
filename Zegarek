@@ -1,0 +1,7 @@
+//HTML
+//<div id="czas"></div>
+//JavaScript
+function getTime() 
+{
+   
+}
