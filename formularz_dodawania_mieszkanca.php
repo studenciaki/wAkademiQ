@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <html>
@@ -80,24 +80,6 @@ if(isset($_SESSION['e_pokoj']))
 	echo $_SESSION['e_pokoj'];
 }
 unset($_SESSION['e_pokoj']);
-?>
-</br>
-Wydział: <input type="text" name="wydzial"
-<?php
-if(isset($_SESSION['form_wydzial']))
-{
-	echo ('value="');
-	echo $_SESSION['form_wydzial'];
-	echo ('"');
-}
-?>
->
-<?php
-if(isset($_SESSION['e_wydzial']))
-{
-	echo $_SESSION['e_wydzial'];
-}
-unset($_SESSION['e_wydzial']);
 ?>
 <br><input type="submit" value="DODAJ">
 <?php
