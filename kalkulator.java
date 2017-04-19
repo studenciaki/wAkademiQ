@@ -1,3 +1,6 @@
+
+
+
 package javaKalkulator;
 
 /**
@@ -6,16 +9,25 @@ package javaKalkulator;
  */
 public class MatKalkulator extends javax.swing.JFrame {
 
-    private double wynik1 = 0.0;
+   private double wynik1 = 0.0;
     private double wynik2 = 0.0;
-   private double minus = 0.0;
+    private double minus = 0.0;
     private char znak;
     private final String Blad = "błąd danych";
     private final String Z = "0";
     private final char Kropka = '.';
+    private final char znakE = 'E';
     private int pom;
+    private int pomznak;
     private String T;
     private String pole1="";
+    private String pole2="";
+    private String pole3="";
+    private String pole4="";
+    private String pole5="";
+    private String pomsiec="";
+    
+    
     /**
      * Creates new form MatKalkulator
      */
@@ -96,6 +108,12 @@ public class MatKalkulator extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
+            }
+            public void windowDeactivated(java.awt.event.WindowEvent evt) {
+                formWindowDeactivated(evt);
+            }
+            public void windowDeiconified(java.awt.event.WindowEvent evt) {
+                formWindowDeiconified(evt);
             }
         });
 
