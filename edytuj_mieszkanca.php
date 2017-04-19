@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <html>
@@ -37,24 +37,16 @@ if(strlen($_POST['imie'])>0 && strlen($_POST['nazwisko'])>0)
 			echo ('<br>Nr albumu:');
 			$pom=$d['nr_albumu'];
 			echo ("<input type=\"text\" name=\"nr_albumu\" value=\"$pom\" readonly>");
-			echo ('<br>Wydział:');
-			$pom=$d['wydzial'];
-			echo ("<input type=\"text\" name=\"wydzial\" value=\"$pom\" readonly>");
 			echo ('<br>Nr pokoju:');
 			$pom=$d['nr_pokoju'];
 			echo ("<input type=\"text\" name=\"nr_pokoju\" value=\"$pom\" readonly>");
-			echo ('<br>Lokator:');
-			$pom=$d['lokator'];
-			if(strlen($pom)==0)
-			{
-				echo ("<input type=\"text\" name=\"lokator\" value=\"brak\" readonly>");
-			}
-			else
-			{
-				echo ("<input type=\"text\" name=\"lokator\" value=\"$pom\" readonly>");
-			}
 			echo ("<br><input type=\"submit\" value=\"PRZEJDŹ DO EDYCJI\"></form>");
 		}
+	}
+	else
+	{
+		$_SESSION['brak_osoby_w_bazie']=true;
+		header ('location: \wakademiq/panel_administracji');
 	}
 }
 else
@@ -81,30 +73,17 @@ else
 				echo ('<br>Nr albumu:');
 				$pom=$d['nr_albumu'];
 				echo ("<input type=\"text\" name=\"nr_albumu\" value=\"$pom\" readonly>");
-				echo ('<br>Wydział:');
-				$pom=$d['wydzial'];
-				echo ("<input type=\"text\" name=\"wydzial\" value=\"$pom\" readonly>");
 				echo ('<br>Nr pokoju:');
 				$pom=$d['nr_pokoju'];
 				echo ("<input type=\"text\" name=\"nr_pokoju\" value=\"$pom\" readonly>");
-				echo ('<br>Lokator:');
-				$pom=$d['lokator'];
-				if(strlen($pom)==0)
-				{
-					echo ("<input type=\"text\" name=\"lokator\" value=\"brak\" readonly>");
-				}
-				else
-				{
-					echo ("<input type=\"text\" name=\"lokator\" value=\"$pom\" readonly>");
-				}
 				echo ("<br><input type=\"submit\" value=\"PRZEJDŹ DO EDYCJI\"></form>");
 			}
 		}	
 	}
 	else
 	{
-		$_SESSION['e_odczyt']=true;
-		header('Location: \wakademiq/panel_administracji/formularz_edycji_mieszkanca.php');
+		$_SESSION['brak_osoby_w_bazie']=true;
+		header ('location: \wakademiq/panel_administracji');
 	}
 }
 ?>
