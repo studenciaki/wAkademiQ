@@ -1,15 +1,18 @@
 <html>
-<head>
-<title>System Uwierzytelniania Mieszkańca</title>
-<link rel="stylesheet" href="mieszkancy.css" type="text/css">
+<head><title>wAkademiQ</title>
+<link rel="stylesheet" href="style_mieszkaniec.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="Shortcut icon" href="favicon.ico" />
 </head>
-<body>
+
+<body link="yellow" vlink="white" alink="white">
+<div id="strona">
 <center>
 <?php
 session_start();
 $nr_albumu=$_POST['nr_albumu'];
-if($nr_albumu=='')
+if($nr_albumu=='' or $nr_albumu=='Wyszukaj mieszkańca')
 {
    $_SESSION['blad']=true;
    header('Location: \wakademiq/sum/index.php');
@@ -21,38 +24,58 @@ $baza = @mysql_select_db('wakademiq', $polaczenie);
 $wynik = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$nr_albumu;") or die(header('Location: \wakademiq/sum/index.php') && $_SESSION['blad_zapytania']=true);
    
 if(mysql_num_rows($wynik) > 0) {
-   echo ('<div id="panel_glowny"><div id="panel_mieszkanca">');
 while($d = mysql_fetch_assoc($wynik)) {
-	echo ("<div id='zdjecie'><img src=\"zdjecia/$nr_albumu.png\" width=\"250px\" height=\"300px\"></div>");
-	echo ("<div id=\"imie_nazwisko\">");
+	echo ('<div id="ramka_mieszkaniec"><div id="mieszkaniec"><br>');
+	echo ("<div id='zdjecie'><img src=\"zdjecia/$nr_albumu.png\" width=\"300px\" height=\"400px\"></div>");
+	echo ("<h1><div id=\"imie\">");
 	echo $d['imie'];
 	echo ("&nbsp;");
 	echo $d['nazwisko'];
-	echo ("</div></div><div id=\"pasek\"></div>");
-	$lokator=$d['lokator'];
-	if($lokator!=''){
-	$wynik2 = mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$lokator;") or die('Błąd zapytania!');
-	if(mysql_num_rows($wynik2) > 0) {
-   echo ("<div id=\"panel_mieszkanca\">");
-while($e = mysql_fetch_assoc($wynik2)) {
-	echo ("<div id='zdjecie'><img src=\"zdjecia/$lokator.png\" width=\"250px\" height=\"300px\"></div>");
-	echo ("<div id=\"imie_nazwisko\">");
-	echo $e['imie'];
-	echo ("&nbsp;");
-	echo $e['nazwisko'];
-	echo ("</div></div>");
-}
-}
-}
-echo ("<div id=\"numer_pokoju\">");
+	echo ("</div></h1><div id=\"status2\">");
+	if($d['wiadomosci_administracja']!='')
+	{
+		echo $d['wiadomosci_administracja'];
+		echo("<div id=\"przycisk\"><form action=\"powiadomiono.php\"><input type=\"submit\" value=\"POWIADOM\"></form></div>");
+	}
+	echo ("</div></div></div><div id=\"pasek\">");
+	echo ("<div id=\"pokoj2\">");
 	echo $d['nr_pokoju'];
-	echo("</div></div>");
+	echo ("</div><div id=\"pokoj\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><div id=\"pokoj2\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><div id=\"pokoj2\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><div id=\"pokoj2\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><div id=\"pokoj2\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><div id=\"pokoj2\">");
+	echo $d['nr_pokoju'];
+	echo ("</div><a href=\"index.php\"><div id=\"cofaj\"><<br>cofnij</div></a></div>");
+	$lokator=$d['lokator'];
+	if($lokator!='')
+	{
+		$wynik2=mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$lokator;") or die ($SESSION['blad_zapytania'] && header("location: wakademiq/sum"));
+		while($e=mysql_fetch_assoc($wynik2))
+		{
+			echo ('<div id="ramka_mieszkaniec"><div id="mieszkaniec"><br>');
+			echo ("<div id='zdjecie'><img src=\"zdjecia/$lokator.png\" width=\"300px\" height=\"400px\"></div>");
+			echo ("<h1><div id=\"imie\">");
+			echo $e['imie'];
+			echo ("&nbsp;");
+			echo $e['nazwisko'];
+			echo ("</div></h1><div id=\"status2\">");
+			echo $e['wiadomosci_administracja'];
+			echo ("</div></div></div>");
+		}
+	}
 }
 }
 else
 {
+   $_SESSION['brak_w_bazie']=true;
    header('Location: \wakademiq/sum/index.php');
-   $_SESSION['brak_w_bazie']='Brak numeru indeksu w bazie!';
 }
 mysql_close($polaczenie);
 ?>
