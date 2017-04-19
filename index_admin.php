@@ -17,5 +17,30 @@
   </div>
 
 </div>
+<?php
+session_start();
+if(isset($_SESSION['sukces_dodano']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Dodano mieszkańca!");';
+    echo '</script>';
+	unset($_SESSION['sukces_dodano']);
+}
+if(isset($_SESSION['brak_osoby_w_bazie']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Brak osoby w bazie!");';
+    echo '</script>';
+	unset($_SESSION['brak_osoby_w_bazie']);
+}
+if(isset($_SESSION['pokoj_zajety']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Pokój zajęty!");';
+    echo '</script>';
+	unset($_SESSION['pokoj_zajety']);
+}
+unset($_SESSION);
+?>
 </body>
 </html>
