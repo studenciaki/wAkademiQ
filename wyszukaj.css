@@ -1,0 +1,89 @@
+body
+{
+	overflow-y:hidden;	
+	background-image: url(tlo_wyszukaj.png);
+}
+#strona
+{
+	 text-align: center;
+	 color: #ffffff;
+	 font-size: 18px;
+	 font-weight: bold;
+	 font-family: 'Lato', sans-serif;
+	 text-shadow: 5px 5px 10px black;	
+}
+#gora
+{
+	height: 360px;
+	width: 100%;
+	float: left;
+	border-bottom-style: dotted;
+	margin-top: 12px; 
+}
+
+#dol
+{
+	height: 50%;
+	width: 100%;
+/*	background-color: green; */
+	float: left;
+}
+
+#blok
+{
+	height: 250px;
+	width: 250px;
+/*	background-color: green; */
+	float: left;
+	margin: 30px; 
+}
+
+#bloki
+{
+	height: 300px;
+	width: 1000px;
+	float: left;
+	margin-left: 10%;
+	
+}
+
+#wyszukaj
+{
+	height: 100px;
+	width: 700px;
+	background-color: red;
+	float: left;
+	margin: 30px; 
+	margin-left: 16%;
+	box-shadow: 5px 5px 10px black;
+	border-radius: 10px;
+}
+#lupa
+{
+	height: 70px;
+	width: 70px;
+	background-color: #7c7286;
+	border-radius: 10px;
+	margin-top: 12px;
+	margin-left: 20px;
+	float: left;
+}
+#szukaj_pasek
+{
+	float: left;
+}
+
+input
+{
+	height: 60px;
+	width: 450px;
+	border-radius: 5px;
+	margin-top: 20px;
+	margin-left: 60px;
+}
+#lo
+{
+	height: 2000px;
+	width: 80%;
+	margin: auto;
+}
