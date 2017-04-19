@@ -1,11 +1,10 @@
-﻿<?php
+<?php
 session_start();
 
 $_SESSION['form_imie']=$_POST['imie'];
 $_SESSION['form_nazwisko']=$_POST['nazwisko'];
 $_SESSION['form_nr_albumu']=$_POST['album'];
 $_SESSION['form_nr_pokoju']=$_POST['nr_pokoju'];
-$_SESSION['form_wydzial']=$_POST['wydzial'];
 
 $czy_ok=true;
 
@@ -41,15 +40,6 @@ if(isset($_POST['nr_pokoju']))
 	if(strlen($_POST['nr_pokoju'])!=4)
 	{
 		$_SESSION['e_pokoj']='Długość numeru albumu musi mieć 4 znaków!';
-		$czy_ok=false;
-	}
-}
-
-if(isset($_POST['wydzial']))
-{
-	if(strlen($_POST['wydzial'])<1)
-	{
-		$_SESSION['e_wydzial']='Nie podano wydziału!';
 		$czy_ok=false;
 	}
 }
@@ -115,6 +105,8 @@ if($czy_ok==true)
 	unset($_SESSION['form_nr_pokoju']);
 	unset($_SESSION['form_wydzial']);
 	header('Location: \wakademiq/panel_administracji');
+	
+	$_SESSION['sukces_dodano']=true;
 }
 else
 {
