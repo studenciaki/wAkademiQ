@@ -206,43 +206,32 @@ public class MatKalkulator extends javax.swing.JFrame {
             }
         });
 
-        btnZero1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero1.setText("-");
-        btnZero1.addActionListener(new java.awt.event.ActionListener() {
+        btnMinus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnMinus.setText("-");
+        btnMinus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero1ActionPerformed(evt);
+                btnMinusActionPerformed(evt);
             }
         });
 
-        btnZero2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero2.setText("*");
-        btnZero2.addActionListener(new java.awt.event.ActionListener() {
+        btnMnozenie.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnMnozenie.setText("*");
+        btnMnozenie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero2ActionPerformed(evt);
+                btnMnozenieActionPerformed(evt);
             }
         });
 
-        btnZero3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZero3.setText("/");
-        btnZero3.addActionListener(new java.awt.event.ActionListener() {
+        btnPodziel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPodziel.setText("/");
+        btnPodziel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero3ActionPerformed(evt);
-            }
-        });
-
-        btnZero4.setFont(new java.awt.Font("Symbol", 1, 14)); // NOI18N
-        btnZero4.setText("");
-        btnZero4.setMaximumSize(new java.awt.Dimension(43, 31));
-        btnZero4.setMinimumSize(new java.awt.Dimension(43, 31));
-        btnZero4.setPreferredSize(new java.awt.Dimension(43, 31));
-        btnZero4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZero4ActionPerformed(evt);
+                btnPodzielActionPerformed(evt);
             }
         });
 
         btnPierwiastek.setFont(new java.awt.Font("Symbol", 1, 14)); // NOI18N
-        btnPierwiastek.setText("");
+        btnPierwiastek.setText("");
         btnPierwiastek.setMaximumSize(new java.awt.Dimension(43, 31));
         btnPierwiastek.setMinimumSize(new java.awt.Dimension(43, 31));
         btnPierwiastek.setPreferredSize(new java.awt.Dimension(43, 31));
@@ -252,9 +241,59 @@ public class MatKalkulator extends javax.swing.JFrame {
             }
         });
 
+        btnPlusMinus.setFont(new java.awt.Font("Symbol", 1, 14)); // NOI18N
+        btnPlusMinus.setText("");
+        btnPlusMinus.setMaximumSize(new java.awt.Dimension(43, 31));
+        btnPlusMinus.setMinimumSize(new java.awt.Dimension(43, 31));
+        btnPlusMinus.setPreferredSize(new java.awt.Dimension(43, 31));
+        btnPlusMinus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPlusMinusActionPerformed(evt);
+            }
+        });
+
         txtWynik.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtWynik.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtWynik.setText("0");
         txtWynik.setName("txtWynik"); // NOI18N
+
+        btnKasuj.setFont(new java.awt.Font("Wingdings", 1, 12)); // NOI18N
+        btnKasuj.setText("");
+        btnKasuj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKasujActionPerformed(evt);
+            }
+        });
+
+        btnPrzecinek.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnPrzecinek.setText(",");
+        btnPrzecinek.setMaximumSize(new java.awt.Dimension(43, 31));
+        btnPrzecinek.setMinimumSize(new java.awt.Dimension(43, 31));
+        btnPrzecinek.setPreferredSize(new java.awt.Dimension(43, 31));
+        btnPrzecinek.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrzecinekActionPerformed(evt);
+            }
+        });
+
+        btnWyczysc.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnWyczysc.setText("C");
+        btnWyczysc.setMaximumSize(new java.awt.Dimension(43, 31));
+        btnWyczysc.setMinimumSize(new java.awt.Dimension(43, 31));
+        btnWyczysc.setPreferredSize(new java.awt.Dimension(43, 31));
+        btnWyczysc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWyczyscActionPerformed(evt);
+            }
+        });
+
+        btnRownasie.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRownasie.setText("=");
+        btnRownasie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRownasieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelStandardowyLayout = new javax.swing.GroupLayout(jPanelStandardowy);
         jPanelStandardowy.setLayout(jPanelStandardowyLayout);
@@ -270,7 +309,7 @@ public class MatKalkulator extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSzesc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnZero1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelStandardowyLayout.createSequentialGroup()
                         .addComponent(btnJeden, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -282,7 +321,8 @@ public class MatKalkulator extends javax.swing.JFrame {
                     .addGroup(jPanelStandardowyLayout.createSequentialGroup()
                         .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSiedem, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSiedem, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnKasuj, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelStandardowyLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -290,14 +330,21 @@ public class MatKalkulator extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnDziewiec, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnZero2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnMnozenie, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelStandardowyLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(btnZero4, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnPierwiastek, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnZero3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(btnPlusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnPodziel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelStandardowyLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnPrzecinek, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnWyczysc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnRownasie, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(txtWynik))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -317,22 +364,27 @@ public class MatKalkulator extends javax.swing.JFrame {
                     .addComponent(btnCztery, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSzesc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnZero1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDziewiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOsiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSiedem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnZero2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMnozenie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnZero3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnZero4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPierwiastek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnPodziel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPierwiastek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPlusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnKasuj, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRownasie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrzecinek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnWyczysc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
-
         btnBin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnBin.setText("BIN");
         btnBin.addActionListener(new java.awt.event.ActionListener() {
