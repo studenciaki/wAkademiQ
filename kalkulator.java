@@ -385,6 +385,7 @@ public class MatKalkulator extends javax.swing.JFrame {
                     .addComponent(btnWyczysc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
+
         btnBin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnBin.setText("BIN");
         btnBin.addActionListener(new java.awt.event.ActionListener() {
@@ -430,10 +431,21 @@ public class MatKalkulator extends javax.swing.JFrame {
                 .addContainerGap(193, Short.MAX_VALUE))
         );
 
-        jTextField6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField6.setMaximumSize(new java.awt.Dimension(40, 30));
-        jTextField6.setMinimumSize(new java.awt.Dimension(40, 30));
-        jTextField6.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtone.setMaximumSize(new java.awt.Dimension(40, 25));
+        txtone.setMinimumSize(new java.awt.Dimension(40, 25));
+        txtone.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtoneKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtoneKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtoneKeyTyped(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText(".");
