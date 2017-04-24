@@ -44,35 +44,49 @@ if($czy_ok==true)
 {
 	$polaczenie=@mysql_connect('localhost','root','');
 	$baza = @mysql_select_db('wakademiq', $polaczenie);
-	$info=mysql_query("SELECT * FROM mieszkancy WHERE nr_album=$nr_albumu");
-	$stare_imie=$info['imie'];
+	$info=mysql_query("SELECT * FROM mieszkancy WHERE nr_albumu=$nr_albumu");
+	if(mysql_num_rows($info)>0)
+			{
+				while($d=mysql_fetch_assoc($info))
+					$stare_imie=$info['imie'];
+					$stare_nazwisko=$info['nazwisko'];
+					$lokator=$info['lokator'];
+			}
 	if($stare_imie!=$imie)
 		$edytuj_imie=mysql_query("UPDATE mieszkancy SET imie='$imie' WHERE nr_albumu=$nr_albumu;") or die ("Błąd zapytania imie");
-	$stare_nazwisko=$info['nazwisko'];
 	if($stare_nazwisko!=$nazwisko)
 		$edytuj_nazwisko=mysql_query("UPDATE mieszkancy SET nazwisko='$nazwisko' WHERE nr_albumu=$nr_albumu;") or die ("Błąd zapytania nazwisko");
 	$stary_pokoj=$info['nr_pokoju'];
 	if($stary_pokoj!=$nr_pokoju)
 	{
 		$spr_pokoj=mysql_query("SELECT * FROM mieszkancy WHERE nr_pokoju='$nr_pokoju';");
-		if(mysql_num_rows($spr_pokoj)==2)
+		$ilosc_mieszkancow=mysql_num_rows($spr_pokoj);
+		if($ilosc_mieszkancow>1)
 		{
-			$_SESSION['pokoj_zajety']=true;
+			$_SESSION['edycja_imie']=$imie;
+			$_SESSION['edycja_nazwisko']=$nazwisko;
+			$_SESSION['edycja_nr_albumu']=$nr_albumu;
+			$_SESSION['pokoj_przepelniony']=true;
+			header('Location: \wakademiq/panel_administracji/edycja_mieszkanca.php');
+		}
+		else if($ilosc_mieszkancow==1)
+		{
+			$jaki_nowy_lokator=mysql_query("SELECT * FROM mieszkancy WHERE nr_pokoju='$nr_pokoju';");
+			if(mysql_num_rows($jaki_nowy_lokator)>0)
+			{
+				while($d=mysql_fetch_assoc($jaki_nowy_lokator))
+					$nowy_lokator=$jaki_nowy_lokator['nr_albumu'];
+			}
+			$ustaw_pokoj=mysql_query("UPDATE mieszkancy SET nr_pokoju='$nr_pokoju' WHERE nr_albumu=$nr_albumu;");
+			$usun_u_starego_lokatora=mysql_query("UPDATE mieszkancy SET lokator=NULL WHERE nr_albumu=$lokator;");
+			$dodaj_nowego_lokatora=mysql_query("UPDATE mieszkancy SET lokator=$nowy_lokator WHERE nr_albumu=$nr_albumu;");
+			$dodaj_u_nowego_lokatora=mysql_query("UPDATE mieszkancy SET lokator=$nr_albumu WHERE nr_albumu=$nowy_lokator");
 		}
 		else
 		{
-			$edytuj_pokoj=mysql_query("UPDATE mieszkancy SET nr_pokoju='$nr_pokoju' WHERE nr_albumu=$nr_albumu;") or die ("Błąd zapytania pokój");
-			if($info['lokator']!='')
-			{
-				$stary_lokator=$info['lokator'];
-				$akt_stary_lokator=mysql_query("UPDATE mieszkancy SET lokator=NULL WHERE nr_albumu=$stary_lokator;") or die ("Błąd zapytania pokój 2");
-			}
-			$czy_lokator=mysql_query("SELECT * FROM mieszkancy WHERE nr_pokoju='$nr_pokoju';") or die ("Błąd zapytania pokój 3");
-			if(mysql_num_rows($czy_lokator)>0)
-			{
-				$nowy_lokator=$czy_lokator['nr_albumu'];
-				$akt_lokatora=mysql_query("UPDATE mieszkancy SET lokator=$nowy_lokator WHERE nr_albumu=$nr_albumu;") or die ("Błąd zapytania pokój 4- $nowy_lokator");
-			}
+			$ustaw_pokoj=mysql_query("UPDATE mieszkancy SET nr_pokoju='$nr_pokoju' WHERE nr_albumu=$nr_albumu;");
+			$usun_u_starego_lokatora=mysql_query("UPDATE mieszkancy SET lokator=NULL WHERE nr_albumu=$lokator;");
+			$wyzeruj_lokatora=mysql_query("UPDATE mieszkancy SET lokator=NULL WHERE nr_albumu=$nr_albumu;");
 		}
 	}
 	mysql_close($polaczenie);
