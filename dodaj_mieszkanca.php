@@ -51,13 +51,11 @@ if($czy_ok==true)
 	$nazwisko=$_POST['nazwisko'];
 	$nr_albumu=$_POST['album'];
 	$nr_pokoju=$_POST['nr_pokoju'];
-	$wydzial=$_POST['wydzial'];
 	
 	$imie=htmlentities($imie, ENT_QUOTES, "UTF-8");
 	$nazwisko=htmlentities($nazwisko, ENT_QUOTES, "UTF-8");
 	$nr_albumu=htmlentities($nr_albumu, ENT_QUOTES, "UTF-8");
 	$nr_pokoju=htmlentities($nr_pokoju, ENT_QUOTES, "UTF-8");
-	$wydzial=htmlentities($wydzial, ENT_QUOTES, "UTF-8");
 	
 	$polaczenie=@mysql_connect('localhost','root','');
 	$baza = @mysql_select_db('wakademiq', $polaczenie);
@@ -91,12 +89,12 @@ if($czy_ok==true)
 	//dodawanie osoby do bazy danych
 	if(isset($lokator))
 	{
-		$dodaj_osobe=mysql_query("INSERT INTO mieszkancy (nr_albumu,imie,nazwisko,nr_pokoju,wydzial,lokator) VALUES ($nr_albumu,'$imie','$nazwisko','$nr_pokoju','$wydzial',$lokator);") or die ("Błąd zapytania!!!");
+		$dodaj_osobe=mysql_query("INSERT INTO mieszkancy (nr_albumu,imie,nazwisko,nr_pokoju,lokator) VALUES ($nr_albumu,'$imie','$nazwisko','$nr_pokoju',$lokator);") or die ("Błąd zapytania!!!");
 		$akt_lokatora=mysql_query("UPDATE mieszkancy SET lokator=$nr_albumu WHERE nr_albumu=$lokator;");
 	}
 	else
 	{
-		$dodaj_osobe=mysql_query("INSERT INTO mieszkancy (nr_albumu,imie,nazwisko,nr_pokoju,wydzial) VALUES ($nr_albumu,'$imie','$nazwisko','$nr_pokoju','$wydzial');") or die ("Błąd zapytania!!!");
+		$dodaj_osobe=mysql_query("INSERT INTO mieszkancy (nr_albumu,imie,nazwisko,nr_pokoju) VALUES ($nr_albumu,'$imie','$nazwisko','$nr_pokoju');") or die ("Błąd zapytania!!!");
 	}
 	mysql_close($polaczenie);
 	unset($_SESSION['form_imie']);
