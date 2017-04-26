@@ -598,12 +598,20 @@ public class MatKalkulator extends javax.swing.JFrame {
         jLabel17.setMinimumSize(new java.awt.Dimension(103, 23));
         jLabel17.setPreferredSize(new java.awt.Dimension(103, 23));
 
+        lblhosty.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblhosty.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblhosty.setPreferredSize(new java.awt.Dimension(380, 23));
 
-        btnKasujIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnKasujIP.setText("C");
-        btnKasujIP.addActionListener(new java.awt.event.ActionListener() {
+        btnsieci.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnsieci.setText("Wyznacz");
+        btnsieci.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnsieciMouseClicked(evt);
+            }
+        });
+        btnsieci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKasujIPActionPerformed(evt);
+                btnsieciActionPerformed(evt);
             }
         });
         
