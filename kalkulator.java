@@ -1,6 +1,6 @@
-
-
-
+/*
+ * Paczka Kalkulator
+ */
 package javaKalkulator;
 
 /**
@@ -9,7 +9,7 @@ package javaKalkulator;
  */
 public class MatKalkulator extends javax.swing.JFrame {
 
-   private double wynik1 = 0.0;
+    private double wynik1 = 0.0;
     private double wynik2 = 0.0;
     private double minus = 0.0;
     private char znak;
@@ -32,14 +32,14 @@ public class MatKalkulator extends javax.swing.JFrame {
      * Creates new form MatKalkulator
      */
     public MatKalkulator() {
-        initComponents();
+       initComponents();
     }
 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
-     
+
         jPanelStandardowy = new javax.swing.JPanel();
         btnJeden = new javax.swing.JButton();
         btnDwa = new javax.swing.JButton();
@@ -80,16 +80,16 @@ public class MatKalkulator extends javax.swing.JFrame {
         lblbinary1 = new javax.swing.JLabel();
         lblmaska0 = new javax.swing.JLabel();
         lblmaska1 = new javax.swing.JLabel();
-        lbladressieci1 = new javax.swing.JLabel();
-        lbladressieci0 = new javax.swing.JLabel();
+        lblbroadcastbin1 = new javax.swing.JLabel();
+        lblbroadcastbin0 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        lblsiecbin1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        lblsiec = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        lblhosty = new javax.swing.JLabel();
         btnsieci = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -456,10 +456,15 @@ public class MatKalkulator extends javax.swing.JFrame {
         jLabel1.setPreferredSize(new java.awt.Dimension(12, 17));
         jLabel1.setRequestFocusEnabled(false);
 
-        jTextField7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField7.setMaximumSize(new java.awt.Dimension(40, 30));
-        jTextField7.setMinimumSize(new java.awt.Dimension(40, 30));
-        jTextField7.setPreferredSize(new java.awt.Dimension(40, 30));
+        txttwo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txttwo.setMaximumSize(new java.awt.Dimension(40, 25));
+        txttwo.setMinimumSize(new java.awt.Dimension(40, 25));
+        txttwo.setPreferredSize(new java.awt.Dimension(40, 30));
+        txttwo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txttwoKeyReleased(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText(".");
@@ -470,10 +475,15 @@ public class MatKalkulator extends javax.swing.JFrame {
         jLabel2.setPreferredSize(new java.awt.Dimension(12, 17));
         jLabel2.setRequestFocusEnabled(false);
 
-        jTextField8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField8.setMaximumSize(new java.awt.Dimension(40, 30));
-        jTextField8.setMinimumSize(new java.awt.Dimension(40, 30));
-        jTextField8.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtthree.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtthree.setMaximumSize(new java.awt.Dimension(40, 25));
+        txtthree.setMinimumSize(new java.awt.Dimension(40, 25));
+        txtthree.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtthree.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtthreeKeyReleased(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText(".");
@@ -484,10 +494,15 @@ public class MatKalkulator extends javax.swing.JFrame {
         jLabel3.setPreferredSize(new java.awt.Dimension(12, 17));
         jLabel3.setRequestFocusEnabled(false);
 
-        jTextField9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField9.setMaximumSize(new java.awt.Dimension(0, 0));
-        jTextField9.setMinimumSize(new java.awt.Dimension(40, 30));
-        jTextField9.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtfour.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtfour.setMaximumSize(new java.awt.Dimension(40, 25));
+        txtfour.setMinimumSize(new java.awt.Dimension(40, 25));
+        txtfour.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtfour.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtfourKeyReleased(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("/");
@@ -498,98 +513,91 @@ public class MatKalkulator extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(12, 17));
         jLabel4.setRequestFocusEnabled(false);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setMaximumSize(new java.awt.Dimension(40, 30));
-        jTextField1.setMinimumSize(new java.awt.Dimension(40, 30));
-        jTextField1.setPreferredSize(new java.awt.Dimension(40, 30));
-
-        btnJedenIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnJedenIP.setText("1");
-        btnJedenIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnJedenIPActionPerformed(evt);
+        txtmask.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtmask.setMaximumSize(new java.awt.Dimension(40, 25));
+        txtmask.setMinimumSize(new java.awt.Dimension(40, 25));
+        txtmask.setPreferredSize(new java.awt.Dimension(40, 30));
+        txtmask.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtmaskKeyReleased(evt);
             }
         });
 
-       btnDwaIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDwaIP.setText("2");
-        btnDwaIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDwaIPActionPerformed(evt);
-            }
-        });
-        
-       btnTrzyIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnTrzyIP.setText("3");
-        btnTrzyIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTrzyIPActionPerformed(evt);
-            }
-        });
+        lblipbinary0.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblipbinary0.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblipbinary0.setText("IP binarnie");
+        lblipbinary0.setMaximumSize(new java.awt.Dimension(103, 23));
+        lblipbinary0.setMinimumSize(new java.awt.Dimension(103, 23));
+        lblipbinary0.setPreferredSize(new java.awt.Dimension(103, 23));
 
-        btnCzteryIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnCzteryIP.setText("4");
-        btnCzteryIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCzteryIPActionPerformed(evt);
-            }
-        });
+        lblbinary1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblbinary1.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblbinary1.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblbinary1.setPreferredSize(new java.awt.Dimension(380, 23));
 
-        btnPiecIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnPiecIP.setText("5");
-        btnPiecIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPiecIPActionPerformed(evt);
-            }
-        });
+        lblmaska0.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblmaska0.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblmaska0.setText("Maska binarnie");
+        lblmaska0.setMaximumSize(new java.awt.Dimension(103, 23));
+        lblmaska0.setMinimumSize(new java.awt.Dimension(103, 23));
+        lblmaska0.setPreferredSize(new java.awt.Dimension(103, 23));
 
-        btnSzescIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSzescIP.setText("6");
-        btnSzescIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSzescIPActionPerformed(evt);
-            }
-        });
+        lblmaska1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblmaska1.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblmaska1.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblmaska1.setPreferredSize(new java.awt.Dimension(380, 23));
 
-        btnSiedemIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnSiedemIP.setText("7");
-        btnSiedemIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiedemIPActionPerformed(evt);
-            }
-        });
+        lblbroadcastbin1.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblbroadcastbin1.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblbroadcastbin1.setPreferredSize(new java.awt.Dimension(380, 23));
 
-        btnOsiemIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnOsiemIP.setText("8");
-        btnOsiemIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOsiemIPActionPerformed(evt);
-            }
-        });
+        lblbroadcastbin0.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblbroadcastbin0.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblbroadcastbin0.setText("Broadcast binarnie");
+        lblbroadcastbin0.setMaximumSize(new java.awt.Dimension(103, 23));
+        lblbroadcastbin0.setMinimumSize(new java.awt.Dimension(103, 23));
+        lblbroadcastbin0.setPreferredSize(new java.awt.Dimension(103, 23));
 
-        btnDziewiecIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnDziewiecIP.setText("9");
-        btnDziewiecIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDziewiecIPActionPerformed(evt);
-            }
-        });
+        jLabel11.setMaximumSize(new java.awt.Dimension(380, 23));
+        jLabel11.setMinimumSize(new java.awt.Dimension(380, 23));
+        jLabel11.setPreferredSize(new java.awt.Dimension(380, 23));
 
-        btnZeroIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnZeroIP.setText("0");
-        btnZeroIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnZeroIPActionPerformed(evt);
-            }
-        });
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("Broadcast");
+        jLabel12.setMaximumSize(new java.awt.Dimension(103, 23));
+        jLabel12.setMinimumSize(new java.awt.Dimension(103, 23));
+        jLabel12.setPreferredSize(new java.awt.Dimension(103, 23));
 
-        btnWyznaczIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnWyznaczIP.setText("=");
-        btnWyznaczIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWyznaczIPActionPerformed(evt);
-            }
-        });
+        lblsiecbin1.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblsiecbin1.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblsiecbin1.setPreferredSize(new java.awt.Dimension(380, 23));
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("Nr sieci binarnie");
+        jLabel14.setMaximumSize(new java.awt.Dimension(103, 23));
+        jLabel14.setMinimumSize(new java.awt.Dimension(103, 23));
+        jLabel14.setPreferredSize(new java.awt.Dimension(103, 23));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setText("Adres sieci");
+        jLabel15.setMaximumSize(new java.awt.Dimension(103, 23));
+        jLabel15.setMinimumSize(new java.awt.Dimension(103, 23));
+        jLabel15.setPreferredSize(new java.awt.Dimension(103, 23));
+
+        lblsiec.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblsiec.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblsiec.setPreferredSize(new java.awt.Dimension(380, 23));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel17.setText("Liczba hostów ");
+        jLabel17.setMaximumSize(new java.awt.Dimension(103, 23));
+        jLabel17.setMinimumSize(new java.awt.Dimension(103, 23));
+        jLabel17.setPreferredSize(new java.awt.Dimension(103, 23));
+
 
         btnKasujIP.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnKasujIP.setText("C");
