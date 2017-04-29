@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <html>
@@ -37,9 +37,6 @@ if(strlen($_POST['imie'])>0 && strlen($_POST['nazwisko'])>0)
 			echo ('<br>Nr albumu:');
 			$pom=$d['nr_albumu'];
 			echo ("<input type=\"text\" name=\"nr_albumu\" value=\"$pom\" readonly>");
-			echo ('<br>Wydział:');
-			$pom=$d['wydzial'];
-			echo ("<input type=\"text\" name=\"wydzial\" value=\"$pom\" readonly>");
 			echo ('<br>Nr pokoju:');
 			$pom=$d['nr_pokoju'];
 			echo ("<input type=\"text\" name=\"nr_pokoju\" value=\"$pom\" readonly>");
@@ -81,9 +78,6 @@ else
 				echo ('<br>Nr albumu:');
 				$pom=$d['nr_albumu'];
 				echo ("<input type=\"text\" name=\"nr_albumu\" value=\"$pom\" readonly>");
-				echo ('<br>Wydział:');
-				$pom=$d['wydzial'];
-				echo ("<input type=\"text\" name=\"wydzial\" value=\"$pom\" readonly>");
 				echo ('<br>Nr pokoju:');
 				$pom=$d['nr_pokoju'];
 				echo ("<input type=\"text\" name=\"nr_pokoju\" value=\"$pom\" readonly>");
