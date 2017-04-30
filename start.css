@@ -18,9 +18,9 @@ body
 
 #witaj
 {
-	height: 10%;
+	height: 15%;
 	margin-top: 8%;
-	font-size: 250%;
+	font-size: 200%;
 	
 }
 /* .tlo_przycisk
@@ -61,12 +61,26 @@ body
 }
 #zegar-data
 {
-	height: 20%;
-	background-color: blue;
+	height: 30%;
+	background-color: #000000;
+	opacity: 0.8;
 	width: 100%;
-	font-size: 80px;
+	font-size: 90px;
 	z-index: 1;
 	float: left;
 	margin-top: 70px;
 
+}
+#zagar
+{
+	/*background-color: white;*/
+	height: 75%;
+	width: 100%;
+}
+#data
+{
+	/*background-color: yellow;*/
+	height: 25%;
+	width: 100%;
+	font-size: 30px;
 }
