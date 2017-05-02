@@ -93,6 +93,7 @@ if($czy_ok==true)
 	}
 	mysql_close($polaczenie);
 	header('Location: \wakademiq/panel_administracji/');
+	$_SESSION['sukces_edycja']=true;
 }
 else
 {
