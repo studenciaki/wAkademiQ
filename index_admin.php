@@ -40,6 +40,20 @@ if(isset($_SESSION['pokoj_zajety']))
     echo '</script>';
 	unset($_SESSION['pokoj_zajety']);
 }
+if(isset($_SESSION['sukces_wymeldowano']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Mieszkaniec wymeldowany!");';
+    echo '</script>';
+	unset($_SESSION['sukces_wymeldowano']);
+}
+if(isset($_SESSION['sukces_edycja']))
+{
+	echo '<script type="text/javascript">';
+    echo 'alert("Dane mieszkańca zmienione!");';
+    echo '</script>';
+	unset($_SESSION['sukces_edycja']);
+}
 unset($_SESSION);
 ?>
 </body>
