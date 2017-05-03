@@ -30,13 +30,13 @@ function wyswietlDane()
 
   var dzienTygodnia = data.getDay();
   switch(dzienTygodnia){
-    case 0: dzienTygodnia = "niedziela"; break;
-    case 1: dzienTygodnia = "poniedziałek"; break;
-    case 2: dzienTygodnia = "wtorek"; break;
+    case 0: dzienTygodnia = "Niedziela"; break;
+    case 1: dzienTygodnia = "Poniedziałek"; break;
+    case 2: dzienTygodnia = "Wtorek"; break;
     case 3: dzienTygodnia = "Środa"; break;
-    case 4: dzienTygodnia = "czwartek"; break;
-    case 5: dzienTygodnia = "piątek"; break;
-    case 6: dzienTygodnia = "sobota"; break;
+    case 4: dzienTygodnia = "Czwartek"; break;
+    case 5: dzienTygodnia = "Piątek"; break;
+    case 6: dzienTygodnia = "Sobota"; break;
   }
 
   var tekst = "Dziś jest " + dzienTygodnia + ", " + dzisiaj;
