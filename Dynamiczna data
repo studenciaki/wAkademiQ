@@ -39,7 +39,7 @@ function wyswietlDane()
     case 6: dzienTygodnia = "Sobota"; break;
   }
 
-  var tekst = "Dziś jest " + dzienTygodnia + ", " + dzisiaj;
+  var tekst = dzienTygodnia + " - " + dzisiaj;
   tekst += "<BR>";
   tekst += czas;
   document.getElementById("dataLayer").innerHTML = tekst;
