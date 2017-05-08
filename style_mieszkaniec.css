@@ -1,0 +1,85 @@
+body
+{
+background-color: #404040;
+font-family: 'Lato', sans-serif;
+color: white;
+background-image: url(tlo.jpg);
+text-shadow: 5px 5px 10px black;
+font-weight: bold;
+}
+
+
+
+a:link {text-decoration: none}
+#strona
+{
+	width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+#ramka_mieszkaniec
+{
+width: 450px;
+float: left;
+height:90%;	
+}
+
+#mieszkaniec
+{
+width: 480px;
+float: left;
+height:610px;	
+background-color: green;
+background: linear-gradient(to bottom, green 0%, blue 100%);
+box-shadow: 5px 5px 10px black;
+
+}
+#pasek
+{
+width: 120px;
+float: left;
+height:610px;	
+background-color: #434343;
+font-size: 70px;
+font-weight: bold;
+box-shadow: 5px 5px 10px black;
+}
+
+img
+{
+	box-shadow: 5px 5px 10px black;
+}
+#ramka_pokoj
+{
+float: left;
+height:80px;	
+width: 100%;
+
+}
+#pokoj
+{
+float: left;
+height:80px;	
+font-size: 40px;
+width: 100%;
+opacity: 1;
+}
+#pokoj2
+{
+float: left;
+height:80px;	
+font-size: 40px;
+width: 100%;
+opacity: 0.2;
+}
+#status
+{
+font-size: 40px;
+color: green;	
+}
+#status2
+{
+font-size: 40px;
+color: red;	
+}
