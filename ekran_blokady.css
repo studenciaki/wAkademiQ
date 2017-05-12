@@ -1,0 +1,32 @@
+body
+{
+	font-weight: bold;
+}
+
+#kontener_glowny
+{
+	background-color: #228B22;
+	height: 70px;
+	width: 400px;
+}
+
+#kontener1
+{
+	background-color: green;
+	height: 70px;
+	width: 400px;
+}
+
+#kontener2
+{
+	background-color: blue;
+	height: 70px;
+	width: 400px;
+}
+
+#kontener3
+{
+	background-color: orange;
+	height: 70px;
+	width: 400px;
+}
