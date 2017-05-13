@@ -1,0 +1,89 @@
+body
+{
+	font-weight: bold;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	text-shadow: 5px 5px 10px black;
+	overflow-y:hidden;
+	background-image: url(tlo3.jpg);
+		margin-top: 0px;
+}
+
+#kontener_glowny
+{
+/*	background-color: #228B22; 
+	height: 70px; */
+	width: 100%;
+	
+}
+
+#menu
+{
+
+	position:fixed;
+	background-color: green; 
+	height: 30px;
+	width: 100%;
+	color: #ffffff;
+	font-size:20px;
+}
+
+#menu1
+{
+	background-color: orange; 
+	height: 100%;
+	width: 50%;
+	float:left;
+}
+#menu2
+{
+
+	background-color: green; 
+	height: 100%;
+	width: 50%;
+	float:left;
+}
+
+ a
+{
+	color: white;
+	text-decoration: none
+}
+#powiadom
+{
+
+	background-color: green; 
+	height: 500px;
+	width: 500px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+input
+{
+	height: 40px;
+	width: 100px;
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	
+}
+button
+{
+	height: 100px;
+	width: 100px;
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+		border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
+}
