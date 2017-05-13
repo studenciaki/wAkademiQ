@@ -13,15 +13,15 @@ body
 
 #kontener_glowny
 {
-/*	background-color: #228B22; */
-	height: 70px;
+/*	background-color: #228B22; 
+	height: 70px; */
 	width: 100%;
 }
 
 #kontener1
 {
 /*	background-color: green; */
-	height: 120px;
+	height: 110px;
 	width: 100%;
 }
 
@@ -48,9 +48,12 @@ body
 #kontener3
 {
 /*	background-color: orange; */
-	height: 80px;
+	height: 90px;
 	width: 100%;
-	text-align: left;
+	text-align: right;
+	color: #ffffff;
+	
+	font-size: 35px;
 }
 
 #obrazek
@@ -65,10 +68,46 @@ body
 	border-bottom-left-radius: 100px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
 }
-
-.input
+#zegar
 {
-	margin-top: 20px;
+	height: 100%;
+	width: 420px;
+	background-color: black;
+}
+#pin
+{
+	height: 45px;
+	width: 220px;
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+}
+#pin1
+{
+	height: 100%;
+	width: 80px;
+	background-color: orange;
+	float: left;
+}
+#pin2
+{
+	height: 100%;
+	width: 40px;
+	background-color: green;
+	float:left;
+}
+input
+{
+	height: 40px;
+	width: 100px;
+	float:left;
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	
 }
