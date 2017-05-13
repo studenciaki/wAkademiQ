@@ -4,22 +4,66 @@
 <link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="Shortcut icon" href="img/favicon.ico" />
+<SCRIPT LANGUAGE= "JavaScript" type= "text/javascript">
+function wyswietlDane()
+{
+  var data = new Date();
+  var godziny = data.getHours();
+  var minuty = data.getMinutes();
+  var sekundy = data.getSeconds();
+  var czas = godziny;
+  czas += ((minuty < 10) ? ":0" : ":") + minuty;
+  czas += ((sekundy < 10) ? ":0" : ":") + sekundy;
+  var miesiac = data.getMonth() + 1;
+  if (miesiac < 9){
+    miesiac = "0" + miesiac;
+  }
+  var dzien = data.getDate();
+  if (dzien < 9){
+    dzien = "0" + dzien;
+  }
+  var rok = data.getYear();
+  if (rok < 1000){
+    rok = 2000 + rok - 100;
+  }
+  var dzisiaj = dzien + "." + miesiac + "." + rok;
+
+  var dzienTygodnia = data.getDay();
+  switch(dzienTygodnia){
+    case 0: dzienTygodnia = "Niedziela"; break;
+    case 1: dzienTygodnia = "Poniedziałek"; break;
+    case 2: dzienTygodnia = "Wtorek"; break;
+    case 3: dzienTygodnia = "Środa"; break;
+    case 4: dzienTygodnia = "Czwartek"; break;
+    case 5: dzienTygodnia = "Piątek"; break;
+    case 6: dzienTygodnia = "Sobota"; break;
+  }
+
+  var tekst = czas;
+  tekst += "<BR>";
+  tekst += dzienTygodnia + " - " + dzisiaj;
+  document.getElementById("dataLayer").innerHTML = tekst;
+  timerID = setTimeout("wyswietlDane()",1000);
+}
+</SCRIPT>
 </head>
 
-<body>
+<body onLoad="wyswietlDane()">
 <div id="kontener_glowny">
 	<div id="kontener1"></div>
 	
 	<div id="kontener2">
-		<div id="wkontener2"><div id="obrazek">.</div>
+		<div id="wkontener2"><div id="obrazek"></div>
 		<br>AkademiQ - RECEPCJA
+		<div id="pin"><div id="pin1">PIN</div>
 		<form action="...">
 		<input type="password" name="pin" />
-		</form></div>
+		</form>
+		<div id="pin2">></div></div></div></div>
 		
 	</div>
 	
-	<div id="kontener3">22:15<br>niedziela, 2 październik 2016</div>
+	<div id="kontener3"><div id="zegar"><div ID="dataLayer"></div></div></div>
 	
 </div>
 </body>
