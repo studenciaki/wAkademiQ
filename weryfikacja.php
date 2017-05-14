@@ -1,7 +1,7 @@
 <html>
 <head><title>wAkademiQ</title>
 <link rel="stylesheet" href="style_mieszkaniec.css" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,900subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="Shortcut icon" href="favicon.ico" />
 </head>
