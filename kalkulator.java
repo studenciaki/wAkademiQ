@@ -847,7 +847,18 @@ public class MatKalkulator extends javax.swing.JFrame {
        TB.append(btnCztery.getText());
        T = TB.toString();
        txtWynik.setText(T);  
-    }                    
+    }    
+    
+    private void btnSzescActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append(btnSzesc.getText());
+       T = TB.toString();
+       txtWynik.setText(T);  
+    }                                        
+
         jIPPanelLayout.setVerticalGroup(
             jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jIPPanelLayout.createSequentialGroup()
