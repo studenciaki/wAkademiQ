@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 ?>
 <html>
@@ -45,7 +45,7 @@ if(isset($_SESSION['e_nazwisko']))
 }
 unset($_SESSION['e_nazwisko']);
 ?>
-<br><input type="submit" value="EDYTUJ">
+<br><input type="submit" value="WYMELDUJ">
 </form>
 <br>lub<br>
 <form action="wymelduj_mieszkanca.php" method="POST">
@@ -67,7 +67,7 @@ if(isset($_SESSION['e_album']))
 }
 unset($_SESSION['e_album']);
 ?>
-<br><input type="submit" value="EDYTUJ">
+<br><input type="submit" value="WYMELDUJ">
 </form>
 <?php
 if(isset($_SESSION['e_odczyt']))
