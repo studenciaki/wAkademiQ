@@ -13,7 +13,7 @@
 	<a href="formularz_dodawania_mieszkanca.php"><div id="przycisk">Dodaj</div></a>
 	<a href="formularz_edycji_mieszkanca.php"><div id="przycisk2">Edytuj</div></a>
 	<a href="wymelduj.php"><div id="przycisk3">Wymelduj</div></a>
-	<a href="#"><div id="przycisk4">Powiadom</div></a>
+	<a href="powiadomienie.php"><div id="przycisk4">Powiadom</div></a>
   </div>
 
 </div>
