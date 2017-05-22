@@ -9,7 +9,7 @@ package javaKalkulator;
  */
 public class MatKalkulator extends javax.swing.JFrame {
 
-    private double wynik1 = 0.0;
+ private double wynik1 = 0.0;
     private double wynik2 = 0.0;
     private double minus = 0.0;
     private char znak;
@@ -26,6 +26,9 @@ public class MatKalkulator extends javax.swing.JFrame {
     private String pole4="";
     private String pole5="";
     private String pomsiec="";
+    private String pombroadcast="";
+    private static final int MAX_BASE = 36;
+    private static final String pattern = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     
     /**
