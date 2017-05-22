@@ -39,3 +39,18 @@ input[type=password]:focus
 	border: 2px solid #a5cda5;
 	background-color: #e9f3e9;
 	color: #428c42;
+}
+input[type=submit]
+{
+	width: 300px;
+	background-color: #36b03c;
+	font-size:20px;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+}
