@@ -31,8 +31,6 @@ if(!isset($_SESSION['weryfikacja_dostep']))
 	</div>
 </div>
 </div>
-</body>
-</html>
 </div>
 <?php
 if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
