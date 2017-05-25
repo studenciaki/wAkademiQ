@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION['weryfikacja_dostep']))
+	header('Location: \wakademiq/index.html');
 ?>
 <html>
 <head><title>wAkademiQ</title>
@@ -29,6 +31,8 @@ session_start();
 	</div>
 </div>
 </div>
+</body>
+</html>
 </div>
 <?php
 if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
