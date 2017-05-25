@@ -10,6 +10,7 @@ session_start();
 
 <body>
 <div id="strona">
+<a href="wyloguj.php" ><div id="wyloguj">Wyloguj</div> </a>
 <div id="lo">
 <div id="gora"><H2>WERYFIKUJ AUTOMATYCZNIE</h2>
 	<div id="bloki">
@@ -28,8 +29,6 @@ session_start();
 	</div>
 </div>
 </div>
-</body>
-</html>
 </div>
 <?php
 if(isset($_SESSION['nr_albumu']) && isset($_SESSION['powiadomiony']))
