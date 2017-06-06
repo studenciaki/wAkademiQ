@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['weryfikacja_dostep']))
+	header('Location: \wakademiq/ekran_blokady.php');
+
 if(!isset($_SESSION['nr_albumu']))
 {
 	header('Location: \wakademiq/sum/index.php');
