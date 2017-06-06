@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION['dostep_panel']))
+	header('Location: \wakademiq/panel_administracji/logowanie.php');
 
 $imie=$_POST['imie'];
 $nazwisko=$_POST['nazwisko'];
@@ -92,11 +94,11 @@ if($czy_ok==true)
 		}
 	}
 	mysql_close($polaczenie);
-	header('Location: \wakademiq/panel_administracji/');
+	header('Location: \wakademiq/panel_administracji/panel.php');
 	$_SESSION['sukces_edycja']=true;
 }
 else
 {
-	header('Location: \wakademiq/panel_administracji/');
+	header('Location: \wakademiq/panel_administracji/panel.php');
 }
 ?>
