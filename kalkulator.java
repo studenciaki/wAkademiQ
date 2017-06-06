@@ -1255,6 +1255,126 @@ return result;
        txtWynik.setText("");
        znak = '-';
     }                      
+               
+     private void btnMnozenieActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
+       txtWynik.setText("");
+       znak = '*';
+    }                                           
+
+    private void btnPodzielActionPerformed(java.awt.event.ActionEvent evt) {                                           
+       wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
+       txtWynik.setText("");
+       znak = '/';
+    }                                          
+
+    private void btnPierwiastekActionPerformed(java.awt.event.ActionEvent evt) {                                               
+       wynik1 = Double.parseDouble( txtWynik.getText() ) ;
+       if (wynik1 < 0)  {
+           txtWynik.setText(Blad);
+           } 
+       else {
+           wynik1 = Math.sqrt(wynik1);
+           txtWynik.setText(String.valueOf(wynik1));
+        }
+    }                                              
+
+    private void btnPlusMinusActionPerformed(java.awt.event.ActionEvent evt) {                                             
+       minus = Double.parseDouble( txtWynik.getText() ) ;
+       minus = -1 * minus;
+       txtWynik.setText(String.valueOf(minus));
+    }                                            
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
+        this.setResizable(false);
+        this.setSize(240, 360);
+    }                                    
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        this.setResizable(false);
+        this.setSize(240, 360);
+    }                                      
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(500, 360);
+        jPanelStandardowy.setVisible(true);
+        jPanelNaukowy.setVisible(true);
+        jIPPanel.setVisible(false);
+    }                                          
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(240, 360);
+        jPanelStandardowy.setVisible(true);
+        jPanelNaukowy.setVisible(false);
+        jIPPanel.setVisible(false);
+    }                                          
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        this.setResizable(false);
+        this.setSize(620, 500);
+        jPanelStandardowy.setVisible(false);
+        jPanelNaukowy.setVisible(false);
+        jIPPanel.setVisible(true);
+    }                                          
+
+    private void btnKasujActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String PT = txtWynik.getText();
+        if (PT.equals(Blad)) {
+            txtWynik.setText("0");
+        }
+        else {
+        int s = PT.length()-1;
+        if (s <= 0) {
+            txtWynik.setText(""); 
+        }
+        else {
+        PT = PT.substring(0,s);
+        //if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       
+       txtWynik.setText(PT);
+        }
+        }
+    }                                        
+
+    private void btnPrzecinekActionPerformed(java.awt.event.ActionEvent evt) {                                             
+       String btnZeroTekst = txtWynik.getText() ;
+       for (int i = 0; i < btnZeroTekst.length(); i++) 
+        {
+          char znak_z_napisu = btnZeroTekst.charAt(i); // pobieramy pojedynczy znak z napisu
+          if (znak_z_napisu == Kropka) // porównanie ze znakiem
+              pom = 1; 
+        } 
+       if (pom != 1)  {
+          btnZeroTekst = txtWynik.getText() + ".";
+          txtWynik.setText(btnZeroTekst) ;
+       }
+    }                                            
+
+    private void btnWyczyscActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        txtWynik.setText("0");
+    }                                          
+
+    private void btnRownasieActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       wynik2 = Double.parseDouble( txtWynik.getText( ) ) ;
+               
+        switch (znak)
+        {
+            case '+':
+                wynik1 = wynik1 + wynik2;
+                T = Double.toString(wynik1);
+                txtWynik.setText(T);
+                break;
+                
+            case '-':
+                wynik1 = wynik1 - wynik2;
+                T = Double.toString(wynik1);
+                txtWynik.setText(T);
+                break;
+                
+            case '*':
+                wynik1 = wynik1 * wynik2;
                 T = Double.toString(wynik1);
                 txtWynik.setText(T);
                 break;
