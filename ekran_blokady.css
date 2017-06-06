@@ -1,0 +1,120 @@
+body
+{
+	font-weight: bold;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	text-shadow: 10px 10px 10px black;
+	overflow-y:hidden;
+	background-image: url(tlo3.jpg);
+}
+
+#kontener_glowny
+{
+/*	background-color: #228B22; 
+	height: 70px; */
+	width: 100%;
+}
+
+#kontener1
+{
+/*	background-color: green; */
+	height: 110px;
+	width: 100%;
+}
+
+#kontener2
+{
+/*	background-color: blue; */
+	height: 400px;
+	width: 100%;
+}
+
+#wkontener2
+{
+/*	background-color: silver; */
+	height: 400px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 40px;
+    -webkit-text-stroke: 2px #000000;
+
+}
+
+#kontener3
+{
+/*	background-color: orange; */
+	height: 90px;
+	width: 100%;
+	text-align: right;
+	color: #ffffff;
+	
+	font-size: 35px;
+}
+
+#obrazek
+{
+	background-image: url(user2.jpg);
+	background-color: black;
+	height: 200px;
+	width:200px;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+	border-bottom-left-radius: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+}
+#zegar
+{
+	height: 100%;
+	width: 420px;
+	background-color: black;
+}
+ a
+{
+	color: white;
+	text-decoration: none;
+	-webkit-text-stroke: 2px #000000;
+	
+}
+#pin
+{
+	height: 45px;
+	width: 300px;
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+}
+#pin1
+{
+	height: 100%;
+	width: 80px;
+	background-color: orange;
+	float: left;
+}
+#pin2
+{
+	height: 100%;
+	width: 40px;
+	background-color: green;
+	float:left;
+}
+input
+{
+	height: 40px;
+	width: 100px;
+	float:left;
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	
+}
