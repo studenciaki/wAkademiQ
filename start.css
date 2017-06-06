@@ -18,9 +18,10 @@ body
 
 #witaj
 {
-	height: 10%;
-	margin-top: 25%;
-	font-size: 250%;
+	height: 15%;
+	margin-top: 8%;
+	font-size: 200%;
+	
 }
 /* .tlo_przycisk
 {
@@ -29,7 +30,7 @@ body
 } */
 .przycisk
 {
-	margin-top: 8%;
+	margin-top: 20%;
 	background-color: #228B22;
 	height: 70px;
 	width: 400px;
@@ -57,4 +58,29 @@ body
 //	min-height: 100%;
 	min-width: 100%;
 	z-index:-1;
+}
+#zegar-data
+{
+	height: 30%;
+	background-color: #000000;
+	opacity: 0.8;
+	width: 100%;
+	font-size: 90px;
+	z-index: 1;
+	float: left;
+	margin-top: 70px;
+
+}
+#zagar
+{
+	/*background-color: white;*/
+	height: 75%;
+	width: 100%;
+}
+#data
+{
+	/*background-color: yellow;*/
+	height: 25%;
+	width: 100%;
+	font-size: 30px;
 }
