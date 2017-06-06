@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['weryfikacja_dostep']))
-	header('Location: \wakademiq/index.html');
+	header('Location: \wakademiq/ekran_blokady.php');
 ?>
 <html>
 <head><title>wAkademiQ</title>
@@ -10,9 +10,9 @@ if(!isset($_SESSION['weryfikacja_dostep']))
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
-<body>
+<body link="white" vlink="white" alink="white">
 <div id="strona">
-<a href="wyloguj.php" ><div id="wyloguj">Wyloguj</div> </a>
+<a href="wyloguj.php" ><div id="wyloguj"> >>>>> Wyloguj</div> </a>
 <div id="lo">
 <div id="gora"><H2>WERYFIKUJ AUTOMATYCZNIE</h2>
 	<div id="bloki">
