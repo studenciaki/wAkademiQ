@@ -1,21 +1,45 @@
 <?php
 session_start();
+if(!isset($_SESSION['dostep_panel']))
+	header('Location: \wakademiq/panel_administracji/logowanie.php');
 ?>
 <html>
-<head><title>wAkademiQ</title>
-<link rel="stylesheet" href="powiadomianie_admin.css" type="text/css">
+<head><title>AKADEMIQ</title>
+<link rel="stylesheet" href="panel.css" type="text/css">
+<link rel="stylesheet" href="input.css" type="text/css">
 <link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="Shortcut icon" href="img/favicon.ico" />
-
 </head>
 
-<body onLoad="wyswietlDane()">
-<div id="kontener_glowny">
-	<div id="menu">
-		<a href="panel_admin"><div id="menu1"><< Cofnij</div></a>
-		<div id="menu2">Panel administracyjny - AkademiQ v2.5</div><br>
-		<div id="powiadom"><h1>Panel powiadomień</h1><br>
+<body link="white" vlink="white" alink="white" onLoad="wyswietlDane()">
+
+<div id="panel">
+	<div id="panel_gora">
+	<div id="pasek1"></div>
+	<a href="panel.php"><div id="pasek2"><img src="logo.png"></div></a>
+	<div id="pasek3"></div>
+	<div id="pasek2"><img src="awatar3.png"> <a href="wylogowanie.php"> <img src="wylogoj.png"></a></div>
+	<div id="pasek1"></div>
+	</div>
+	
+	<div id="panel_lewa">
+		<div id="menu">Mieszkańcy<div id="menu2">
+		<a href="dodaj.php"><div id="przycisk_menu">Dodaj</div></a>
+		<a href="edytuj.php"><div id="przycisk_menu">Edytuj</div></a>
+		<a href="wymelduj.php"><div id="przycisk_menu">Wymelduj</div></a>
+		<a href="powiadomienie.php"><div id="przycisk_menu">Powiadom</div></a>
+		</div></div>
+		<div id="menu">Panel<div id="menu2">
+		<a href="ustawienia.php"><div id="przycisk_menu">Ustawienia</div></a>
+		<a href="serwis.php"><div id="przycisk_menu">Kontakt z serwis</div></a>
+		</div></div>
+	</div>
+	
+	<div id="panel_prawa"><center>Powiadom mieszkańca<bR><br> &nbsp
+
+
+
 		<?php
 			$nr_albumu=$_POST['nr_albumu'];
 			if(strlen($nr_albumu)!=6)
@@ -53,18 +77,18 @@ session_start();
 				}
 			}
 		?>
-Ustaw status: <br><br>
+Ustaw status: <br><br><center>
 <form action="kontakt_z_admin.php">
-<button type="submit"><img src="user.jpg" height="50%" width="90%">Kontakt z administracja</button>
+<button type="submit"><img src="user.jpg" height="80px" width="80px"><br>Kontakt z administracja</button>
 </form>
 <form action="platnosc.php">
-<button type="submit"><img src="user.jpg" height="50%" width="90%">Alarm płatności</button>
+<button type="submit"><img src="user.jpg" height="80px" width="80px"><br>Alarm płatności</button>
 </form>
 <form>
-<button type="button" disabled="disabled"><img src="user.jpg" height="50%" width="90%">.............. TEST</button>
+<button type="submit" disabled="disabled"><img src="user.jpg" height="80px" width="80px"><br>.............. TEST</button>
 </form>
-	</div>
-</div>
+	
+
 	
 	
 	
