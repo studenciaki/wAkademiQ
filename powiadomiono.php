@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 if(!isset($_SESSION['weryfikacja_dostep']))
 	header('Location: \wakademiq/ekran_blokady.php');

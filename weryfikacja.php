@@ -1,3 +1,8 @@
+﻿<?php
+session_start();
+if(!isset($_SESSION['weryfikacja_dostep']))
+	header('Location: \wakademiq/ekran_blokady.php');
+?>
 <html>
 <head><title>wAkademiQ</title>
 <link rel="stylesheet" href="style_mieszkaniec.css" type="text/css">
@@ -10,7 +15,6 @@
 <div id="strona">
 <center>
 <?php
-session_start();
 $nr_albumu=$_POST['wyszukaj'];
 if($nr_albumu=='' or $nr_albumu=='Wyszukaj mieszkańca')
 {

@@ -3,7 +3,7 @@ session_start();
 $pin=$_POST['pin'];
 if($pin!=5421)
 {
-	header('Location: \wakademiq/index.html');
+	header('Location: \wakademiq/ekran_blokady.php');
 }
 else
 {
