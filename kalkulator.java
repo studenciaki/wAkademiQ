@@ -997,20 +997,27 @@ return result;
     int wynik(String dana)
     {
         int ogranicznik = dana.length();
-        for (int i = 0; i < ogranicznik; i++) 
-        {
-          char znaczek = dana.charAt(i); // pobieramy pojedynczy znak z napisu
-          if (znaczek == znakE) // porównanie ze znakiem
-              pomznak = 1; 
-        } 
+        if (ogranicznik >= 12) { pomznak = 1; }
+        else {
+        
+            for (int i = 0; i < ogranicznik; i++) 
+            {
+                char znaczek = dana.charAt(i); // pobieramy pojedynczy znak z napisu
+                if (znaczek == znakE) // porównanie ze znakiem
+                pomznak = 1; 
+            } 
+        }
         
         return pomznak;
     }
-// Koniec metody pomocniczej            
-
+// Koniec metody pomocniczej
     
-     private void btnJedenActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+    
+    private void btnJedenActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
        
        if (wynik(T)==1)
        {
@@ -1028,100 +1035,213 @@ return result;
     }                                        
 
     private void btnDwaActionPerformed(java.awt.event.ActionEvent evt) {                                       
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnDwa.getText());
        T = TB.toString();
        txtWynik.setText(T);  
+       }
     }                                      
 
     private void btnTrzyActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnTrzy.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                       
 
     private void btnPiecActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnPiec.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                       
 
-     private void btnCzteryActionPerformed(java.awt.event.ActionEvent evt) {                                          
-       T = txtWynik.getText();
+    private void btnCzteryActionPerformed(java.awt.event.ActionEvent evt) {                                          
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnCztery.getText());
        T = TB.toString();
        txtWynik.setText(T);  
-    }    
-    
+       }
+    }                                         
+
     private void btnSzescActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnSzesc.getText());
        T = TB.toString();
        txtWynik.setText(T);  
+       }
     }                                        
 
     private void btnSiedemActionPerformed(java.awt.event.ActionEvent evt) {                                          
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnSiedem.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T);
+       }
     }                                         
 
     private void btnOsiemActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnOsiem.getText());
        T = TB.toString();
        txtWynik.setText(T);  
-    } 
-    
-         private void btnDziewiecActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       T = txtWynik.getText();
+       }
+    }                                        
+
+    private void btnDziewiecActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnDziewiec.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                           
 
     private void btnBinActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toBinaryString(pomwyn));
+        //System.out.println(Integer.parseInt(bin, 2));
     }                                      
 
     private void btnOctActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toString(pomwyn, 8));
     }                                      
 
     private void btnHexActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toString(pomwyn, 16));
     }                                      
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       String btnZeroTekst = txtWynik.getText() + btnZero.getText();
-       txtWynik.setText(btnZeroTekst);
+       
+        pomznak = 0;
+        T = txtWynik.getText();
+        
+        if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+        
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append(btnZero.getText());
+       T = TB.toString();
+       txtWynik.setText(T); 
+       } 
+        
+        
     }                                       
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {                                        
@@ -1134,127 +1254,7 @@ return result;
        wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
        txtWynik.setText("");
        znak = '-';
-    }                                        
-
-    private void btnMnozenieActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
-       txtWynik.setText("");
-       znak = '*';
-    }                                           
-
-    private void btnPodzielActionPerformed(java.awt.event.ActionEvent evt) {                                           
-       wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
-       txtWynik.setText("");
-       znak = '/';
-    }                                          
-
-    private void btnPierwiastekActionPerformed(java.awt.event.ActionEvent evt) {                                               
-       wynik1 = Double.parseDouble( txtWynik.getText() ) ;
-       if (wynik1 < 0)  {
-           txtWynik.setText(Blad);
-           } 
-       else {
-           wynik1 = Math.sqrt(wynik1);
-           txtWynik.setText(String.valueOf(wynik1));
-        }
-    }                                              
-
-    private void btnPlusMinusActionPerformed(java.awt.event.ActionEvent evt) {                                             
-       minus = Double.parseDouble( txtWynik.getText() ) ;
-       minus = -1 * minus;
-       txtWynik.setText(String.valueOf(minus));
-    }                                            
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {                                     
-        this.setResizable(false);
-        this.setSize(240, 360);
-    }                                    
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        this.setResizable(false);
-        this.setSize(240, 360);
-    }                                      
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        this.setResizable(false);
-        this.setSize(500, 360);
-        jPanelStandardowy.setVisible(true);
-        jPanelNaukowy.setVisible(true);
-        jIPPanel.setVisible(false);
-    }                                          
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        this.setResizable(false);
-        this.setSize(240, 360);
-        jPanelStandardowy.setVisible(true);
-        jPanelNaukowy.setVisible(false);
-        jIPPanel.setVisible(false);
-    }                                          
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        this.setResizable(false);
-        this.setSize(620, 400);
-        jPanelStandardowy.setVisible(false);
-        jPanelNaukowy.setVisible(false);
-        jIPPanel.setVisible(true);
-    }                                          
-
-    private void btnKasujActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        String PT = txtWynik.getText();
-        if (PT.equals(Blad)) {
-            txtWynik.setText("0");
-        }
-        else {
-        int s = PT.length()-1;
-        if (s <= 0) {
-            txtWynik.setText(""); 
-        }
-        else {
-        PT = PT.substring(0,s);
-        //if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
-       
-       txtWynik.setText(PT);
-        }
-        }
-    }                                        
-
-    private void btnPrzecinekActionPerformed(java.awt.event.ActionEvent evt) {                                             
-       String btnZeroTekst = txtWynik.getText() ;
-       for (int i = 0; i < btnZeroTekst.length(); i++) 
-        {
-          char znak_z_napisu = btnZeroTekst.charAt(i); // pobieramy pojedynczy znak z napisu
-          if (znak_z_napisu == Kropka) // porównanie ze znakiem
-              pom = 1; 
-        } 
-       if (pom != 1)  {
-          btnZeroTekst = txtWynik.getText() + ".";
-          txtWynik.setText(btnZeroTekst) ;
-       }
-    }                                            
-
-    private void btnWyczyscActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        txtWynik.setText("0");
-    }                                          
-
-    private void btnRownasieActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       wynik2 = Double.parseDouble( txtWynik.getText( ) ) ;
-               
-        switch (znak)
-        {
-            case '+':
-                wynik1 = wynik1 + wynik2;
-                T = Double.toString(wynik1);
-                txtWynik.setText(T);
-                break;
-                
-            case '-':
-                wynik1 = wynik1 - wynik2;
-                T = Double.toString(wynik1);
-                txtWynik.setText(T);
-                break;
-                
-            case '*':
-                wynik1 = wynik1 * wynik2;
+    }                      
                 T = Double.toString(wynik1);
                 txtWynik.setText(T);
                 break;
