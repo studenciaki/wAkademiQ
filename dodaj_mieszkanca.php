@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION['dostep_panel']))
+	header('Location: \wakademiq/panel_administracji/logowanie.php');
 
 $_SESSION['form_imie']=$_POST['imie'];
 $_SESSION['form_nazwisko']=$_POST['nazwisko'];
@@ -57,6 +59,10 @@ if($czy_ok==true)
 	$nr_albumu=htmlentities($nr_albumu, ENT_QUOTES, "UTF-8");
 	$nr_pokoju=htmlentities($nr_pokoju, ENT_QUOTES, "UTF-8");
 	
+	$zdjecie=$_FILES['plik'];
+	$adr='../sum/zdjecia/'.$nr_albumu.'.png';
+	move_uploaded_file($_FILES['plik']['tmp_name'], $adr);
+	
 	$polaczenie=@mysql_connect('localhost','root','');
 	$baza = @mysql_select_db('wakademiq', $polaczenie);
 	//sprawdzenie czy osoba o podanym albumie jest już w bazie
@@ -64,7 +70,7 @@ if($czy_ok==true)
 	if(mysql_num_rows($spr_album)>0)
 	{
 		$_SESSION['album_w_bazie']=true;
-		header('Location: \wakademiq/panel_administracji/formularz_dodawania_mieszkanca.php');
+		header('Location: \wakademiq/panel_administracji/dodaj.php');
 		mysql_close($polaczenie);
 		exit();
 	}
@@ -73,7 +79,7 @@ if($czy_ok==true)
 	if(mysql_num_rows($spr_pokoj)==2)
 	{
 		$_SESSION['pokoj_zajety']=true;
-		header('Location: \wakademiq/panel_administracji/formularz_dodawania_mieszkanca.php');
+		header('Location: \wakademiq/panel_administracji/dodaj.php');
 		mysql_close($polaczenie);
 		exit();
 	}
@@ -102,12 +108,12 @@ if($czy_ok==true)
 	unset($_SESSION['form_nr_albumu']);
 	unset($_SESSION['form_nr_pokoju']);
 	unset($_SESSION['form_wydzial']);
-	header('Location: \wakademiq/panel_administracji');
+	header('Location: \wakademiq/panel_administracji/panel.php');
 	
 	$_SESSION['sukces_dodano']=true;
 }
 else
 {
-	header('Location: \wakademiq/panel_administracji/formularz_dodawania_mieszkanca.php');
+	header('Location: \wakademiq/panel_administracji/dodaj.php');
 }
 ?>
