@@ -1,5 +1,8 @@
-﻿<?php
+<?php
 session_start();
+if(!isset($_SESSION['dostep_panel']))
+	header('Location: \wakademiq/panel_administracji/logowanie.php');
+
 if(isset($_SESSION['wskazany_album']))
 {
 	$nr_albumu=$_SESSION['wskazany_album'];
@@ -13,12 +16,12 @@ if(isset($_SESSION['wskazany_album']))
 	}
 	$zmiana=mysql_query("UPDATE mieszkancy SET wiadomosci_administracja='Alarm płatności!' WHERE nr_albumu=$nr_albumu;");
 	mysql_close($polaczenie);
-	header('Location: \wakademiq/panel_administracji/index.php');
+	header('Location: \wakademiq/panel_administracji/panel.php');
 }
 else
 {
 	mysql_close($polaczenie);
-	header('Location: \wakademiq/panel_administracji/index.php');
+	header('Location: \wakademiq/panel_administracji/panel.php');
 	exit();
 }
 ?>
