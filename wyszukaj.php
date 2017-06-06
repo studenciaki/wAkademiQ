@@ -1,3 +1,8 @@
+<?php
+session_start();
+if(!isset($_SESSION['weryfikacja_dostep']))
+	header('Location: \wakademiq/ekran_blokady.php');
+?>
 <html>
 <head>
 <title>System Uwierzytelniania Mieszkańca</title>
@@ -7,7 +12,6 @@
 <center>
 <a href='index.php'>Powrót</a><br>
 <?php
-session_start();
 $nazwisko=$_POST['nazwisko'];
 if($nazwisko=='')
 {
