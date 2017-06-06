@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION['dostep_panel']))
+	header('Location: \wakademiq/panel_administracji/logowanie.php');
 ?>
 <html>
 <head><title>wAkademiQ - dodawanie mieszkańca</title>
