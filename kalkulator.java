@@ -1406,7 +1406,7 @@ return result;
       //System.out.println("Number of one bits = " + Integer.bitCount(i)); 
     }                                     
 
-    private void btnsieciActionPerformed(java.awt.event.ActionEvent evt) {                                         
+     private void btnsieciActionPerformed(java.awt.event.ActionEvent evt) {                                         
         int one, two, three, four, mask; //kolejne oktety i maska
       String s1, s2, s3, s4, s5, s=""; //lancuchy tekstowe dla poszczegolnych oktetow 
       s1 = txtone.getText();
@@ -1491,36 +1491,52 @@ return result;
           
           //Wyznaczanie adresu sieci binarnie
           String siecbin = "";
+          String siecbroadcast = "";
           for (int z = 1; z<=mask; z++) 
           {
               siecbin =  siecbin + s.charAt(z-1); //czytanie pojedynczego znaku z łańcucha s
+              siecbroadcast = siecbroadcast + s.charAt(z-1);
               if (z%8 == 0)
               {
                  siecbin = siecbin + '.'; 
+                 siecbroadcast = siecbroadcast + '.';
               }
           }
           for (int z=mask+1; z<=32; z++)
           {
               siecbin = siecbin + '0';
+              siecbroadcast = siecbroadcast + '1';
+              
               if ( (z%8 == 0) && (z != 32) )
               {
-                 siecbin = siecbin + '.'; 
+                 siecbin = siecbin + '.';
+                 siecbroadcast = siecbroadcast + '.';
               }
           }
           lblsiecbin1.setText(siecbin);
+          lblbroadcastbin1.setText(siecbroadcast);
           
           //Wyznaczanie adresu sieci dziesiętnie
-          int chwila, wyk=128;
-          int liczba=0;
+          int chwila, chwila1, wyk=128;
+          int liczba=0, liczba1 = 0; //liczba do nr sieci, liczba1 do broadcast
           pomsiec =siecbin.substring(0,8)  + siecbin.substring(9);
           pomsiec =pomsiec.substring(0,16) + pomsiec.substring(17);
           pomsiec =pomsiec.substring(0,24) + pomsiec.substring(25);
           lblsiec.setText("");
+          // to samo do broadcast
+          pombroadcast =siecbroadcast.substring(0,8)  + siecbroadcast.substring(9);
+          pombroadcast =pombroadcast.substring(0,16) + pombroadcast.substring(17);
+          pombroadcast =pombroadcast.substring(0,24) + pombroadcast.substring(25);
+          lblbroadcast.setText("");
+          
           
           for (int z=0; z<32; z++)
           {
-              chwila = ((int)(pomsiec.charAt(z))) - 48;
+              chwila = ((int)(pomsiec.charAt(z))) - 48; //do sieci
+              chwila1 = ((int)(pombroadcast.charAt(z))) - 48; //do broadcast
+              
               liczba = chwila * wyk + liczba;
+              liczba1 = chwila1 * wyk + liczba1;
               wyk = wyk/2;
               
               if (z%8==7)
@@ -1529,11 +1545,22 @@ return result;
                   lblsiec.setText(lblsiec.getText() + Integer.toString(liczba));
                   lblsiec.setText(lblsiec.getText() + '.');
                   liczba=0;
+                  
+                  lblbroadcast.setText(lblbroadcast.getText() + Integer.toString(liczba1));
+                  lblbroadcast.setText(lblbroadcast.getText() + '.');
+                  liczba1=0;
               }
           }
           // koniec wyznaczania numeru sieci       
           
-          lblbroadcastbin1.setText("pomsiec");
+          
+          
+         // ========== Liczba hostow =====================
+         int host;
+         host = 32 - mask;
+         String hosty;
+         hosty = "2^" + Integer.toString(host) + " -2";
+         lblhosty.setText(hosty);
       }     
     }                                        
 
@@ -1692,6 +1719,156 @@ return result;
         jIPPanel.setVisible(false);
     }                                      
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        
+    }                                      
+
+    private void jOAplikacjiActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        if (opis.isVisible())
+        {
+            opis.dispose();
+        }
+        
+        opis.setVisible(true);
+        java.awt.Dimension ekran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();// pobierz rozmiar ekranu
+        this.setSize(ekran.width - (ekran.width / 2), ekran.height - (ekran.height / 2)); // ustawiamy rozmiar okna.
+        this.setLocationRelativeTo(null); // null oznacza że chcemy umieścić okno na środku ekranu.
+    }                                           
+
+    private void btnBin1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('A');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnOct1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('B');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnHex1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('C');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnBin2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('D');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnOct2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('E');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnHex2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('F');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 2)));
+          
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 8)));
+    }                                        
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 16)));
+    }                                        
+
     /**
      * @param args the command line arguments
      */
@@ -1720,23 +1897,32 @@ return result;
         //</editor-fold>
 
         /* Create and display the form */
+        
+                
         java.awt.EventQueue.invokeLater(() -> {
             new MatKalkulator().setVisible(true);
+            
             
         });
     }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnBin;
+    private javax.swing.JButton btnBin1;
+    private javax.swing.JButton btnBin2;
     private javax.swing.JButton btnCztery;
     private javax.swing.JButton btnDwa;
     private javax.swing.JButton btnDziewiec;
     private javax.swing.JButton btnHex;
+    private javax.swing.JButton btnHex1;
+    private javax.swing.JButton btnHex2;
     private javax.swing.JButton btnJeden;
     private javax.swing.JButton btnKasuj;
     private javax.swing.JButton btnMinus;
     private javax.swing.JButton btnMnozenie;
     private javax.swing.JButton btnOct;
+    private javax.swing.JButton btnOct1;
+    private javax.swing.JButton btnOct2;
     private javax.swing.JButton btnOsiem;
     private javax.swing.JButton btnPiec;
     private javax.swing.JButton btnPierwiastek;
@@ -1751,9 +1937,11 @@ return result;
     private javax.swing.JButton btnWyczysc;
     private javax.swing.JButton btnZero;
     private javax.swing.JButton btnsieci;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jIPPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1767,9 +1955,11 @@ return result;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jOAplikacji;
     private javax.swing.JPanel jPanelNaukowy;
     private javax.swing.JPanel jPanelStandardowy;
     private javax.swing.JLabel lblbinary1;
+    private javax.swing.JLabel lblbroadcast;
     private javax.swing.JLabel lblbroadcastbin0;
     private javax.swing.JLabel lblbroadcastbin1;
     private javax.swing.JLabel lblhosty;
@@ -1785,5 +1975,9 @@ return result;
     private javax.swing.JTextField txtthree;
     private javax.swing.JTextField txttwo;
     // End of variables declaration                   
-}
+    private final Opis opis;
 
+    private void setLocationRelativeTo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
