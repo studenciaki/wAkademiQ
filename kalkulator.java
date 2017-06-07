@@ -26,6 +26,9 @@ public class MatKalkulator extends javax.swing.JFrame {
     private String pole4="";
     private String pole5="";
     private String pomsiec="";
+    private String pombroadcast="";
+    private static final int MAX_BASE = 36;
+    private static final String pattern = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     
     /**
@@ -33,8 +36,76 @@ public class MatKalkulator extends javax.swing.JFrame {
      */
     public MatKalkulator() {
        initComponents();
+       opis = new Opis();
+       java.awt.Dimension ekran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();// pobierz rozmiar ekranu
+        this.setSize(ekran.width - (ekran.width / 2), ekran.height - (ekran.height / 2)); // ustawiamy rozmiar okna.
+        this.setLocationRelativeTo(null); // null oznacza że chcemy umieścić okno na środku ekranu.
     }
 
+    //Konwersje
+    
+    public static String convertTo(int n, int base)
+{
+String result = "";
+ 
+//base is too big or too small
+if ((base > MAX_BASE) || (base < 2))
+return null;
+ 
+//n is equal to 0, do not process, return "0"
+if (n == 0)
+return "0";
+ 
+//process until n > 0
+while (n>0)
+{
+result = pattern.charAt(n % base) + result;
+n /= base;
+}
+ 
+return result;
+}
+ 
+//  return value of x or -1 if an error occurs
+private static int valueOf(char x, int base)
+{
+for (int i=0; i<base; i++)
+{
+if (x == pattern.charAt(i))
+{
+return i;
+}
+}
+return -1;
+}
+ 
+//  returns converted n or 0 if an error occurs
+public static int convertFrom(String n, int base)
+{
+int i, x;
+int p = 1;
+int result = 0;
+ 
+//base is too big or too small
+if ((base > MAX_BASE) || (base < 2))
+return 0;
+ 
+n = n.toUpperCase();
+ 
+for (i=n.length()-1; i>=0; i--)
+{
+x = valueOf(n.charAt(i), base);
+if (x < 0)
+{
+return 0;
+}
+result += (x * p);
+p *= base;
+}
+ 
+return result;
+}
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
@@ -66,6 +137,15 @@ public class MatKalkulator extends javax.swing.JFrame {
         btnBin = new javax.swing.JButton();
         btnHex = new javax.swing.JButton();
         btnOct = new javax.swing.JButton();
+        btnBin1 = new javax.swing.JButton();
+        btnOct1 = new javax.swing.JButton();
+        btnHex1 = new javax.swing.JButton();
+        btnBin2 = new javax.swing.JButton();
+        btnOct2 = new javax.swing.JButton();
+        btnHex2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jIPPanel = new javax.swing.JPanel();
         txtone = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -82,7 +162,7 @@ public class MatKalkulator extends javax.swing.JFrame {
         lblmaska1 = new javax.swing.JLabel();
         lblbroadcastbin1 = new javax.swing.JLabel();
         lblbroadcastbin0 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblbroadcast = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         lblsiecbin1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -97,6 +177,7 @@ public class MatKalkulator extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jOAplikacji = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kalkulator 1.0 by ...");
@@ -295,6 +376,172 @@ public class MatKalkulator extends javax.swing.JFrame {
             }
         });
 
+        btnBin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnBin.setText("BIN");
+        btnBin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBinActionPerformed(evt);
+            }
+        });
+
+        btnHex.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnHex.setText("HEX");
+        btnHex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHexActionPerformed(evt);
+            }
+        });
+
+        btnOct.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnOct.setText("OCT");
+        btnOct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOctActionPerformed(evt);
+            }
+        });
+
+        btnBin1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnBin1.setText(" A ");
+        btnBin1.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnBin1.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnBin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBin1ActionPerformed(evt);
+            }
+        });
+
+        btnOct1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnOct1.setText(" B ");
+        btnOct1.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnOct1.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnOct1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOct1ActionPerformed(evt);
+            }
+        });
+
+        btnHex1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnHex1.setText(" C ");
+        btnHex1.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnHex1.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnHex1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHex1ActionPerformed(evt);
+            }
+        });
+
+        btnBin2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnBin2.setText(" D ");
+        btnBin2.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnBin2.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnBin2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBin2ActionPerformed(evt);
+            }
+        });
+
+        btnOct2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnOct2.setText(" E ");
+        btnOct2.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnOct2.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnOct2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOct2ActionPerformed(evt);
+            }
+        });
+
+        btnHex2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnHex2.setText(" F ");
+        btnHex2.setMaximumSize(new java.awt.Dimension(67, 31));
+        btnHex2.setMinimumSize(new java.awt.Dimension(67, 31));
+        btnHex2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHex2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("BIN -> DEC");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("OCT -> DEC");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("HEX -> DEC");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelNaukowyLayout = new javax.swing.GroupLayout(jPanelNaukowy);
+        jPanelNaukowy.setLayout(jPanelNaukowyLayout);
+        jPanelNaukowyLayout.setHorizontalGroup(
+            jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                        .addComponent(btnBin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnOct))
+                    .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                        .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnBin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBin2, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnOct1, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                            .addComponent(btnOct2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                        .addComponent(btnHex2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                        .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnHex1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnHex))
+                        .addGap(0, 8, Short.MAX_VALUE))))
+            .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanelNaukowyLayout.setVerticalGroup(
+            jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNaukowyLayout.createSequentialGroup()
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHex, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBin1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOct1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHex1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBin2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOct2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHex2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanelStandardowyLayout = new javax.swing.GroupLayout(jPanelStandardowy);
         jPanelStandardowy.setLayout(jPanelStandardowyLayout);
         jPanelStandardowyLayout.setHorizontalGroup(
@@ -346,90 +593,55 @@ public class MatKalkulator extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnRownasie, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(txtWynik))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(jPanelNaukowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanelStandardowyLayout.setVerticalGroup(
             jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelStandardowyLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnJeden, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDwa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTrzy, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCztery, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSzesc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDziewiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOsiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSiedem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMnozenie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPodziel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPierwiastek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPlusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelStandardowyLayout.createSequentialGroup()
+                        .addComponent(txtWynik, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnJeden, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDwa, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnTrzy, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCztery, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSzesc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnDziewiec, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOsiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSiedem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMnozenie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPodziel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPierwiastek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPlusMinus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jPanelNaukowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelStandardowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnKasuj, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRownasie, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPrzecinek, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnWyczysc, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnBin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnBin.setText("BIN");
-        btnBin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBinActionPerformed(evt);
-            }
-        });
-
-        btnHex.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnHex.setText("HEX");
-        btnHex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHexActionPerformed(evt);
-            }
-        });
-
-        btnOct.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnOct.setText("OCT");
-        btnOct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOctActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelNaukowyLayout = new javax.swing.GroupLayout(jPanelNaukowy);
-        jPanelNaukowy.setLayout(jPanelNaukowyLayout);
-        jPanelNaukowyLayout.setHorizontalGroup(
-            jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelNaukowyLayout.createSequentialGroup()
-                .addComponent(btnBin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOct)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnHex))
-        );
-        jPanelNaukowyLayout.setVerticalGroup(
-            jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelNaukowyLayout.createSequentialGroup()
-                .addGroup(jPanelNaukowyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOct, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHex, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
-        );
+        jIPPanel.setMaximumSize(new java.awt.Dimension(619, 328));
+        jIPPanel.setMinimumSize(new java.awt.Dimension(619, 328));
+        jIPPanel.setName(""); // NOI18N
+        jIPPanel.setOpaque(false);
 
         txtone.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtone.setMaximumSize(new java.awt.Dimension(40, 25));
@@ -558,9 +770,9 @@ public class MatKalkulator extends javax.swing.JFrame {
         lblbroadcastbin0.setMinimumSize(new java.awt.Dimension(103, 23));
         lblbroadcastbin0.setPreferredSize(new java.awt.Dimension(103, 23));
 
-        jLabel11.setMaximumSize(new java.awt.Dimension(380, 23));
-        jLabel11.setMinimumSize(new java.awt.Dimension(380, 23));
-        jLabel11.setPreferredSize(new java.awt.Dimension(380, 23));
+        lblbroadcast.setMaximumSize(new java.awt.Dimension(380, 23));
+        lblbroadcast.setMinimumSize(new java.awt.Dimension(380, 23));
+        lblbroadcast.setPreferredSize(new java.awt.Dimension(380, 23));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -654,7 +866,7 @@ public class MatKalkulator extends javax.swing.JFrame {
                     .addComponent(lblbinary1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblmaska1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblbroadcastbin1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblbroadcast, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblsiecbin1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblsiec, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblhosty, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -663,7 +875,7 @@ public class MatKalkulator extends javax.swing.JFrame {
         jIPPanelLayout.setVerticalGroup(
             jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jIPPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -691,7 +903,7 @@ public class MatKalkulator extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblbroadcast, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -703,8 +915,7 @@ public class MatKalkulator extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jIPPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblhosty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(161, Short.MAX_VALUE))
+                    .addComponent(lblhosty, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         jMenu1.setText("File");
@@ -741,6 +952,20 @@ public class MatKalkulator extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Opis");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+
+        jOAplikacji.setText("O aplikacji");
+        jOAplikacji.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOAplikacjiActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jOAplikacji);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -751,25 +976,18 @@ public class MatKalkulator extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelStandardowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanelNaukowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jIPPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                    .addComponent(jPanelStandardowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jIPPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelStandardowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelNaukowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelStandardowy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jIPPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -779,20 +997,27 @@ public class MatKalkulator extends javax.swing.JFrame {
     int wynik(String dana)
     {
         int ogranicznik = dana.length();
-        for (int i = 0; i < ogranicznik; i++) 
-        {
-          char znaczek = dana.charAt(i); // pobieramy pojedynczy znak z napisu
-          if (znaczek == znakE) // porównanie ze znakiem
-              pomznak = 1; 
-        } 
+        if (ogranicznik >= 12) { pomznak = 1; }
+        else {
+        
+            for (int i = 0; i < ogranicznik; i++) 
+            {
+                char znaczek = dana.charAt(i); // pobieramy pojedynczy znak z napisu
+                if (znaczek == znakE) // porównanie ze znakiem
+                pomznak = 1; 
+            } 
+        }
         
         return pomznak;
     }
-// Koniec metody pomocniczej            
-
+// Koniec metody pomocniczej
     
-     private void btnJedenActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+    
+    private void btnJedenActionPerformed(java.awt.event.ActionEvent evt) {                                         
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
        
        if (wynik(T)==1)
        {
@@ -810,100 +1035,213 @@ public class MatKalkulator extends javax.swing.JFrame {
     }                                        
 
     private void btnDwaActionPerformed(java.awt.event.ActionEvent evt) {                                       
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnDwa.getText());
        T = TB.toString();
        txtWynik.setText(T);  
+       }
     }                                      
 
     private void btnTrzyActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnTrzy.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                       
 
     private void btnPiecActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnPiec.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                       
 
-     private void btnCzteryActionPerformed(java.awt.event.ActionEvent evt) {                                          
-       T = txtWynik.getText();
+    private void btnCzteryActionPerformed(java.awt.event.ActionEvent evt) {                                          
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnCztery.getText());
        T = TB.toString();
        txtWynik.setText(T);  
-    }    
-    
+       }
+    }                                         
+
     private void btnSzescActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnSzesc.getText());
        T = TB.toString();
        txtWynik.setText(T);  
+       }
     }                                        
 
     private void btnSiedemActionPerformed(java.awt.event.ActionEvent evt) {                                          
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnSiedem.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T);
+       }
     }                                         
 
     private void btnOsiemActionPerformed(java.awt.event.ActionEvent evt) {                                         
-       T = txtWynik.getText();
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnOsiem.getText());
        T = TB.toString();
        txtWynik.setText(T);  
-    } 
-    
-         private void btnDziewiecActionPerformed(java.awt.event.ActionEvent evt) {                                            
-       T = txtWynik.getText();
+       }
+    }                                        
+
+    private void btnDziewiecActionPerformed(java.awt.event.ActionEvent evt) {                                            
+       
+        pomznak = 0;
+        
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
         if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
        StringBuilder TB = new StringBuilder(T);
       
        TB.append(btnDziewiec.getText());
        T = TB.toString();
-       txtWynik.setText(T);  
+       txtWynik.setText(T); 
+       }
     }                                           
 
     private void btnBinActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toBinaryString(pomwyn));
+        //System.out.println(Integer.parseInt(bin, 2));
     }                                      
 
     private void btnOctActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toString(pomwyn, 8));
     }                                      
 
     private void btnHexActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+        int pomwyn;
+        pomwyn = Integer.parseInt(txtWynik.getText());
+        txtWynik.setText(Integer.toString(pomwyn, 16));
     }                                      
 
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {                                        
-       String btnZeroTekst = txtWynik.getText() + btnZero.getText();
-       txtWynik.setText(btnZeroTekst);
+       
+        pomznak = 0;
+        T = txtWynik.getText();
+        
+        if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+        
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append(btnZero.getText());
+       T = TB.toString();
+       txtWynik.setText(T); 
+       } 
+        
+        
     }                                       
 
     private void btnPlusActionPerformed(java.awt.event.ActionEvent evt) {                                        
@@ -916,9 +1254,9 @@ public class MatKalkulator extends javax.swing.JFrame {
        wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
        txtWynik.setText("");
        znak = '-';
-    }                                        
-
-    private void btnMnozenieActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    }                      
+               
+     private void btnMnozenieActionPerformed(java.awt.event.ActionEvent evt) {                                            
        wynik1 = Double.parseDouble( txtWynik.getText( ) ) ;
        txtWynik.setText("");
        znak = '*';
@@ -975,7 +1313,7 @@ public class MatKalkulator extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
         this.setResizable(false);
-        this.setSize(620, 400);
+        this.setSize(620, 500);
         jPanelStandardowy.setVisible(false);
         jPanelNaukowy.setVisible(false);
         jIPPanel.setVisible(true);
@@ -1068,7 +1406,7 @@ public class MatKalkulator extends javax.swing.JFrame {
       //System.out.println("Number of one bits = " + Integer.bitCount(i)); 
     }                                     
 
-    private void btnsieciActionPerformed(java.awt.event.ActionEvent evt) {                                         
+     private void btnsieciActionPerformed(java.awt.event.ActionEvent evt) {                                         
         int one, two, three, four, mask; //kolejne oktety i maska
       String s1, s2, s3, s4, s5, s=""; //lancuchy tekstowe dla poszczegolnych oktetow 
       s1 = txtone.getText();
@@ -1153,36 +1491,52 @@ public class MatKalkulator extends javax.swing.JFrame {
           
           //Wyznaczanie adresu sieci binarnie
           String siecbin = "";
+          String siecbroadcast = "";
           for (int z = 1; z<=mask; z++) 
           {
               siecbin =  siecbin + s.charAt(z-1); //czytanie pojedynczego znaku z łańcucha s
+              siecbroadcast = siecbroadcast + s.charAt(z-1);
               if (z%8 == 0)
               {
                  siecbin = siecbin + '.'; 
+                 siecbroadcast = siecbroadcast + '.';
               }
           }
           for (int z=mask+1; z<=32; z++)
           {
               siecbin = siecbin + '0';
+              siecbroadcast = siecbroadcast + '1';
+              
               if ( (z%8 == 0) && (z != 32) )
               {
-                 siecbin = siecbin + '.'; 
+                 siecbin = siecbin + '.';
+                 siecbroadcast = siecbroadcast + '.';
               }
           }
           lblsiecbin1.setText(siecbin);
+          lblbroadcastbin1.setText(siecbroadcast);
           
           //Wyznaczanie adresu sieci dziesiętnie
-          int chwila, wyk=128;
-          int liczba=0;
+          int chwila, chwila1, wyk=128;
+          int liczba=0, liczba1 = 0; //liczba do nr sieci, liczba1 do broadcast
           pomsiec =siecbin.substring(0,8)  + siecbin.substring(9);
           pomsiec =pomsiec.substring(0,16) + pomsiec.substring(17);
           pomsiec =pomsiec.substring(0,24) + pomsiec.substring(25);
           lblsiec.setText("");
+          // to samo do broadcast
+          pombroadcast =siecbroadcast.substring(0,8)  + siecbroadcast.substring(9);
+          pombroadcast =pombroadcast.substring(0,16) + pombroadcast.substring(17);
+          pombroadcast =pombroadcast.substring(0,24) + pombroadcast.substring(25);
+          lblbroadcast.setText("");
+          
           
           for (int z=0; z<32; z++)
           {
-              chwila = ((int)(pomsiec.charAt(z))) - 48;
+              chwila = ((int)(pomsiec.charAt(z))) - 48; //do sieci
+              chwila1 = ((int)(pombroadcast.charAt(z))) - 48; //do broadcast
+              
               liczba = chwila * wyk + liczba;
+              liczba1 = chwila1 * wyk + liczba1;
               wyk = wyk/2;
               
               if (z%8==7)
@@ -1191,11 +1545,22 @@ public class MatKalkulator extends javax.swing.JFrame {
                   lblsiec.setText(lblsiec.getText() + Integer.toString(liczba));
                   lblsiec.setText(lblsiec.getText() + '.');
                   liczba=0;
+                  
+                  lblbroadcast.setText(lblbroadcast.getText() + Integer.toString(liczba1));
+                  lblbroadcast.setText(lblbroadcast.getText() + '.');
+                  liczba1=0;
               }
           }
           // koniec wyznaczania numeru sieci       
           
-          lblbroadcastbin1.setText("pomsiec");
+          
+          
+         // ========== Liczba hostow =====================
+         int host;
+         host = 32 - mask;
+         String hosty;
+         hosty = "2^" + Integer.toString(host) + " -2";
+         lblhosty.setText(hosty);
       }     
     }                                        
 
@@ -1354,6 +1719,156 @@ public class MatKalkulator extends javax.swing.JFrame {
         jIPPanel.setVisible(false);
     }                                      
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        
+    }                                      
+
+    private void jOAplikacjiActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        if (opis.isVisible())
+        {
+            opis.dispose();
+        }
+        
+        opis.setVisible(true);
+        java.awt.Dimension ekran = java.awt.Toolkit.getDefaultToolkit().getScreenSize();// pobierz rozmiar ekranu
+        this.setSize(ekran.width - (ekran.width / 2), ekran.height - (ekran.height / 2)); // ustawiamy rozmiar okna.
+        this.setLocationRelativeTo(null); // null oznacza że chcemy umieścić okno na środku ekranu.
+    }                                           
+
+    private void btnBin1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('A');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnOct1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('B');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnHex1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('C');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnBin2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('D');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnOct2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('E');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void btnHex2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        pomznak = 0;
+        T = txtWynik.getText();
+       
+       if (wynik(T)==1)
+       {
+           txtWynik.setText(T);
+       }
+       else {
+        T = txtWynik.getText();
+        if (T.equals("0") || T.equals("-0") ||  T.equals("błąd danych")) { T=""; }
+       StringBuilder TB = new StringBuilder(T);
+      
+       TB.append('F');
+       T = TB.toString();
+       txtWynik.setText(T); 
+       }
+    }                                       
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 2)));
+          
+    }                                        
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 8)));
+    }                                        
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        String pomywyn;
+        pomywyn = txtWynik.getText();
+        txtWynik.setText(Integer.toString(Integer.parseInt(pomywyn, 16)));
+    }                                        
+
     /**
      * @param args the command line arguments
      */
@@ -1382,23 +1897,32 @@ public class MatKalkulator extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+                
         java.awt.EventQueue.invokeLater(() -> {
             new MatKalkulator().setVisible(true);
+            
             
         });
     }
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton btnBin;
+    private javax.swing.JButton btnBin1;
+    private javax.swing.JButton btnBin2;
     private javax.swing.JButton btnCztery;
     private javax.swing.JButton btnDwa;
     private javax.swing.JButton btnDziewiec;
     private javax.swing.JButton btnHex;
+    private javax.swing.JButton btnHex1;
+    private javax.swing.JButton btnHex2;
     private javax.swing.JButton btnJeden;
     private javax.swing.JButton btnKasuj;
     private javax.swing.JButton btnMinus;
     private javax.swing.JButton btnMnozenie;
     private javax.swing.JButton btnOct;
+    private javax.swing.JButton btnOct1;
+    private javax.swing.JButton btnOct2;
     private javax.swing.JButton btnOsiem;
     private javax.swing.JButton btnPiec;
     private javax.swing.JButton btnPierwiastek;
@@ -1413,9 +1937,11 @@ public class MatKalkulator extends javax.swing.JFrame {
     private javax.swing.JButton btnWyczysc;
     private javax.swing.JButton btnZero;
     private javax.swing.JButton btnsieci;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jIPPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -1429,9 +1955,11 @@ public class MatKalkulator extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jOAplikacji;
     private javax.swing.JPanel jPanelNaukowy;
     private javax.swing.JPanel jPanelStandardowy;
     private javax.swing.JLabel lblbinary1;
+    private javax.swing.JLabel lblbroadcast;
     private javax.swing.JLabel lblbroadcastbin0;
     private javax.swing.JLabel lblbroadcastbin1;
     private javax.swing.JLabel lblhosty;
@@ -1447,5 +1975,9 @@ public class MatKalkulator extends javax.swing.JFrame {
     private javax.swing.JTextField txtthree;
     private javax.swing.JTextField txttwo;
     // End of variables declaration                   
-}
+    private final Opis opis;
 
+    private void setLocationRelativeTo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}
