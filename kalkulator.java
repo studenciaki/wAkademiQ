@@ -29,9 +29,7 @@ return result;
         btnMinus = new javax.swing.JButton();
         btnMnozenie = new javax.swing.JButton();
         btnPodziel = new javax.swing.JButton();
-        btnPierwiastek = new javax.swing.JButton();
-        btnPlusMinus = new javax.swing.JButton();
-        txtWynik = new javax.swing.JTextField();
+
         btnKasuj = new javax.swing.JButton();
         btnPrzecinek = new javax.swing.JButton();
         btnWyczysc = new javax.swing.JButton();
